@@ -61,3 +61,18 @@ Class level @Validated 로 해결할 수 있다.
 
 ---
 
+#### JUnit, ParameterizedTest + CsvSource에 NullValue 넣는 방법
+```
+@ParameterizedTest
+@CsvSource(value = {"0,Name1", "2,Name2", "3,null"}, nullValues = "null")
+void test(final int index, final String name) {
+  System.out.println("index = " + index);
+  System.out.println("name = " + name);
+
+  assertThat(index).isLessThan(4);
+  assertThat(name).isNotNull(); // Fail
+}
+```
+
+---
+

@@ -76,3 +76,8 @@ void test(final int index, final String name) {
 
 ---
 
+#### JUnit, assertAll  
+assert문의 나열에서, 중간에 실패하더라도 모두 실행하여 결과들을 보여준다.  
+
+---  
+

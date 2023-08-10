@@ -81,3 +81,6 @@ assert문의 나열에서, 중간에 실패하더라도 모두 실행하여 결�
 
 ---  
 
+#### Mockito, MockBean vs SpyBean  
+MockBean은 조작한 부분 빼고는 작동하지 않음.
+SpyBean은 조작하지 않은 부분들은 정상작동.

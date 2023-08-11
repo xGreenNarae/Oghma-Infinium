@@ -1,14 +1,14 @@
 ### Ubuntu 기본적인 것들  
 
-####그룹에 사용자추가
+#### 그룹에 사용자추가
 `usermod -aG 그룹이름 사용자이름`
 
-####백그라운드실행
+#### 백그라운드실행
 `nohup node nodejs_test.js &`  
 nohup : 쉘종료, 사용자로그아웃 등에도 계속실행상태  
 & : 백그라운드실행  
 
-####환경변수  
+#### 환경변수  
 터미널을 다시시작하면 설정값이 사라지는 방법  
 `export PATH=$PATH:/home/username/abc`  
 
@@ -17,16 +17,16 @@ nohup : 쉘종료, 사용자로그아웃 등에도 계속실행상태
 시스템변수 수정  
 `/etc/environment`  
 
-####압축파일 관련  
+#### 압축파일 관련  
 apt-get install gzip  
 gzip -d {압축 파일명}.gz  
 tar -xvf test.tar  
 
-####Alias
+#### Alias
 `alias python='python3'`  
 `alias 이걸치면='실제로는이렇게해라'`  
 
-####crontab  
+#### crontab  
 crontab -e 설정  
 crontab -l 목록보기  
 crontab -r 제거  

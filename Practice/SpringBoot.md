@@ -83,4 +83,14 @@ assert문의 나열에서, 중간에 실패하더라도 모두 실행하여 결�
 
 #### Mockito, MockBean vs SpyBean  
 MockBean은 조작한 부분 빼고는 작동하지 않음.
-SpyBean은 조작하지 않은 부분들은 정상작동.
+SpyBean은 조작하지 않은 부분들은 정상작동.  
+
+---  
+
+#### Spring Bean  
+일반적으로 싱글톤 타입으로 객체를 관리하게 하는데 의미가 있다고 생각한다. @Component, @Bean, @Configuration .. 등 다양한 Annotation들이 Spring Bean을 만들어 낸다.  
+같은 타입의 빈일 경우, 주입받을 때 식별될 필요가 있다. Qualifier, Primary 등을 사용할 수 있고 여기서 같은 타입이란 예를들어 method 의 반환 타입을 의미한다.  
+프로토타입 빈도 있다. 싱글톤이 아니라 일반 객체를 new 로 만드는 것과 동일하게 매번 새로운 객체를 생성한다는 건데, DI의 장점을 사용한다는 것에 의의가 있다.  
+
+---  
+

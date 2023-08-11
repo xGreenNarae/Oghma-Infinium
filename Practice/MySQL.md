@@ -1,5 +1,5 @@
-#### Replication  
-GTID 를 이용한 복제 서버 구축  
+### Replication  
+#### GTID 를 이용한 복제 서버 구축  
 
 2개의 mysql 서버 준비.
 
@@ -27,7 +27,7 @@ server_id=2222
 
 relay_log=mysql-relay-bin
 relay_log_purge=ON
-read_only
+super_read_only # 책에는 read_only 를 설정하라고 나와있으나 super_read_only 가 더 안전하다.
 log_slave_updates
 ```
 
@@ -65,9 +65,24 @@ CHANGE REPLICATION SOURCE TO
 `SHOW REPLICA STATUS;` 로 상태를 확인해보자. WAITING 중이라면 OKAY.  
 만약 자동으로 시작이 안된다거나.. 하면 `START REPLICA` 등의 명령어가 있다. 반대로 `STOP REPLICA` 도 있음.  
 
-일단 돌아는 간다.  
-이제 두려운 것은 이 상태에서 문제가 생겼을 경우 어떻게 하느냐는 것. 미래의 나에게 맡긴다.  
+---  
+#### 복제에 문제가 발생하여 멈췄을 경우. 문제지점의 트랜잭션을 건너뛰기  
+`SHOW REPLICA STATUS` 를 통해 retrieved_gtid_set, executed_gtid_set 을 확인할 수 있다.  
+예를들어 retrieved_gtid_set 이 `09c5fc8b-3787-11ee-9817-0242ac110004:7-22` 이고,  
+executed_gtid_set은 `09c5fc8b-3787-11ee-9817-0242ac110004:1-17`,
+`4fde3a8b-3787-11ee-9937-0242ac110004:1-2` 라고 되어있다 치자.  
+
+이것을 잘 복사해두고..  
+`STOP REPLICA;` 로 복제를 중단한다.  
+`SET gtid_next = '09c5fc8b-3787-11ee-9817-0242ac110004:18'` 이 되어야 한다. `4fde..` 은 필요없는거고, 17번까지 수행되었으니 그 다음이 18번이 되어야한다는 뜻. gtid 부분에 따옴표로 감싸지는것 잘 볼것.  
+빈 트랜잭션을 생성하라. `BEGIN; COMMIT;`  
+gtid_next 변수값이 자동으로 초기화되도록 설정 `SET gtid_next='AUTOMATIC';`
+`START REPLICA;` 로 복제를 재시작 하자.  
 
 ---  
+---  
+---  
+
+
 
 

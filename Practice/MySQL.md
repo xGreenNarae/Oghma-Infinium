@@ -14,9 +14,7 @@ enforce_gtid_consistency=ON
 server_id=1111
 
 log_bin=mysql-bin
-```
-
-
+```  
 
 REPLICA  
 ```
@@ -83,6 +81,15 @@ gtid_next 변수값이 자동으로 초기화되도록 설정 `SET gtid_next='AU
 ---  
 ---  
 
+#### 임시 쿼리 로그를 보고 싶을 때  
+`SET GLOBAL log_output = 'table';` # 로그를 파일이 아닌 테이블에 기록.  
+`SET GLOBAL general_log = 1;`  
+`SELECT * FROM mysql.general_log ;`  
 
+---  
+
+#### 유저 생성 및 권한 부여  
+`CREATE USER 'userName'@'%' IDENTIFIED BY 'PASSWORD';`  
+`GRANT ALL PRIVILEGES ON *.* TO 'userName'@'%';` # 이 경우 모든 권한을 준다.  
 
 

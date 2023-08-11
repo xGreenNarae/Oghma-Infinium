@@ -115,6 +115,9 @@ docker stop $(docker ps -a -q) && \
 docker rm $(docker ps -a -q)
 ```
 
+컨테이너가 시작이 안되고 터져버렸다면? 로그를 본다.  
+`docker logs containerName`  
+
 ---  
 
 #### SCP (Secure Copy)  

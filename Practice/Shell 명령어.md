@@ -49,7 +49,7 @@ db_backup
 
 #### SSH
 `ssh -i file_path userName@domain`  
-포트 명시 `ssh root@192.168.0.1 -p 5000` 
+포트 명시 `ssh root@192.168.0.1 -p 5000`  
 Windows10 에서는 OpenSSH 앱을 설치하여 SSH 를 간단히 사용할 수 있다.  
 윈도우 설정 - 앱 - 선택적기능  
 
@@ -68,8 +68,8 @@ docker container 의 기본 게이트웨이는 `172.17.0.1` 이다.
 `docker rm containerName`  
 `docker start` , `docker stop` , `docker restart`  
 
-MySQL 실행 예제
-`docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=<password> -d -p 3306:3306 mysql:latest`
+MySQL 실행 예제  
+`docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=<password> -d -p 3306:3306 mysql:latest`  
 -p : 포트바인딩. 외부포트 : 내부포트  
 -d : 백그라운드실행  
 -it : 대화형으로 사용하기 위함  
@@ -92,7 +92,7 @@ NONE 이미지삭제
 `docker rmi $(docker images -f "dangling=true" -q)`  
 
 이름변경
-컨테이너이름변경: `docker rename <old_name> <new_name>`
+컨테이너이름변경: `docker rename <old_name> <new_name>`  
 이미지 이름변경 : 
 	`docker image tag <이전 tag> <새 tag>`
 	`docker rmi <이전 tag>`
@@ -102,7 +102,7 @@ NONE 이미지삭제
 Ctrl+D , exit 하면 컨테이너 종료,  
 Ctrl + P + Q 하면 종료없이나옴.  
 
-컨테이너 안팎으로 파일/폴더 복사. -r 같은거 없어도 폴더면 알아서 폴더복사됨.
+컨테이너 안팎으로 파일/폴더 복사. -r 같은거 없어도 폴더면 알아서 폴더복사됨.  
 `docker cp CONTAINER:<src_path> <dst_path>`  
 `docker cp <src_path> container:<dst_path>`  
 
@@ -143,11 +143,11 @@ docker rm $(docker ps -a -q)
 여기에 ln -s 심볼릭링크로 위 경로의 .conf 파일을 연결한다.  
 설정이끝나면 nginx 재시작.  
 
-sudo service nginx start # nginx 실행
-sudo service nginx restart #nginx 셧다운 후 재실행
-sudo servcie nginx reload #수정된 설정 파일 적용하여 nginx 실행
-sudo service nginx stop #nginx 중지
-nginx -t #nginx 설정파일의 문법이 올바른지 확인
+`sudo service nginx start` # nginx 실행  
+`sudo service nginx restart` #nginx 셧다운 후 재실행  
+`sudo servcie nginx reload` #수정된 설정 파일 적용하여 nginx 실행  
+`sudo service nginx stop` #nginx 중지  
+`nginx -t` #nginx 설정파일의 문법이 올바른지 확인  
 
 ---  
 
@@ -166,7 +166,7 @@ jenkins/jenkins
 이 경우, 젠킨스 컨테이너에서도 docker cli 는 필요하다.(docker.io 를 설치하여 해결가능)
 
 appleboy/jenkins-action 을 사용하면 원격에서 쉽게 트리거할수있다.
-curl -X POST http://192.168.0.1:9000/job/AppName/build --user greennarae:11087e98dece7fb5a3516735899ec0e910
+`curl -X POST http://192.168.0.1:9000/job/AppName/build --user greennarae:11087e98dece7fb5a3516735899ec0e910`
 API Token 은 jenkins-profile-API Token 에 있는것을 사용한다.
 
 

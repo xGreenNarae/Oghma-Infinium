@@ -178,6 +178,53 @@ public class DataSourceRouter extends AbstractRoutingDataSource {
 
 ---  
 
+#### Jacoco  
+Java Code Coverage  
+테스트 이후 실행되는 코드 커버리지 측정 도구  
+
+대충 Gradle 예제.
+```
+plugins {  
+	...  
+
+	id 'jacoco'  
+}
+
+jacoco {
+	toolVersion = "0.8.10" // 최신버전이 뭔가 -> https://www.jacoco.org/jacoco/
+}
+
+jacocoTestReport {
+	reports {
+		xml.required = true // Gradle 8.0.2 .. 아무튼 최신버전에서 바뀐 부분이라 주의.
+		csv.required = false
+		html.required = true
+		html.destination file("${buildDir}/reports/jacocoReport")
+	}
+	finalizedBy jacocoTestCoverageVerification
+}
+
+jacocoTestCoverageVerification { // 실패하면 빌드실패.  
+	violationRules {
+		rule { // 브랜치, 라인 커버리지가 80% 이상이어야 한다.
+			enabled = true
+			limit {
+				counter = 'LINE'
+				value = 'COVEREDRATIO'
+				minimum = 0.8
+			}
+
+			limit {
+				counter = 'BRANCH'
+				value = 'COVEREDRATIO'
+				minimum = 0.8
+			}
+		}
+	}
+}
+```
+
+---  
 
 
 

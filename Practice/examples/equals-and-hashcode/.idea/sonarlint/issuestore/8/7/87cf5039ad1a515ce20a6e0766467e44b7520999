@@ -1,0 +1,27 @@
+
+O
+java:S5838"2Use assertThat(actual).isSameAs(expected) instead.(Û¢™š8ôÜúñ1
+U
+java:S5838"3Use assertThat(actual).isEqualTo(expected) instead.(Æ¨ûªúÿÿÿÿ8õÜúñ1
+X
+java:S5838";Use assertThat(actual).hasSameHashCodeAs(expected) instead.(˜Èº¦8öÜúñ1
+W
+java:S5838/"5Use assertThat(actual).isNotSameAs(expected) instead.(×•Õøşÿÿÿÿ8÷Üúñ1
+W
+java:S5838C"5Use assertThat(actual).isNotSameAs(expected) instead.(×•Õøşÿÿÿÿ8÷Üúñ1
+X
+java:S5838E";Use assertThat(actual).hasSameHashCodeAs(expected) instead.(˜Èº¦8øÜúñ1
+O
+java:S5838_"2Use assertThat(actual).isSameAs(expected) instead.(Û¢™š8øÜúñ1
+U
+java:S5838`"3Use assertThat(actual).isEqualTo(expected) instead.(Æ¨ûªúÿÿÿÿ8øÜúñ1
+X
+java:S5838a";Use assertThat(actual).hasSameHashCodeAs(expected) instead.(˜Èº¦8ùÜúñ1
+X
+java:S5838‚"5Use assertThat(actual).isNotSameAs(expected) instead.(×•Õøşÿÿÿÿ8úÜúñ1
+X
+java:S5838¢"5Use assertThat(actual).isNotSameAs(expected) instead.(×•Õøşÿÿÿÿ8ûÜúñ1
+Y
+java:S5838¤";Use assertThat(actual).hasSameHashCodeAs(expected) instead.(˜Èº¦8ûÜúñ1
+X
+java:S5838Â"5Use assertThat(actual).isNotSameAs(expected) instead.(×•Õøşÿÿÿÿ8üÜúñ1

@@ -1,4 +1,14 @@
-#### RDBMS 에서 - [Silvia Botros, Jeremy Tinley]
+#### Replication  
+복제에는 State기반 복제, Row(Command)기반 복제로 나눠볼 수 있는데 상태를 전달하는것과 명령을 전달하는 것에 차이가 있다.  
+예를들어 전달받은 명령이 Now() 일 경우, 서버 시스템 시간의 차이가 발생할 수 있는것.  
+
+---  
+---  
+---  
+
+### MySQL  
+
+#### RDBMS 에서 - [Silvia Botros, Jeremy Tinley]
 - 1개 이상의 값을 가질 수 있는 필드에 SET Type 을 사용하는 것이 어떤가하면, 일반적으로는 별도의 Relation 을 운용하는 것이 좋다고 함.
 - Query Tuning 보다는 Optimization 이라는 단어가 더 적절하다.
 - 복잡한 하나의 쿼리 vs 여러 개의 간단한 쿼리
@@ -19,4 +29,7 @@
 #### InnoDB 가 무슨 뜻인가.
 - InnoBase 라는 회사에서 만들어진 이름으로 추정. Innovated DB 정도의 이름일까 라는 추측 정도.
 
+---  
+---  
+---  
 

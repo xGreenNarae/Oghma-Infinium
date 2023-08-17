@@ -45,6 +45,8 @@ IntegerCache는 기본적으로 -128 ~ 127 까지의 Integer 객체를 캐싱한
 3. NestedObject (field에 Object가 있는 경우)  
 	- Child도 Equals, HashCode가 같이 재정의 되어야한다.  
 	
+[예제코드](./examples/equals-and-hashcode/src/test/java/EqualsAndHashCodeTest.java)
+	
 ---  
 
 #### Generic  

@@ -112,4 +112,8 @@ MHA는 Source에 장애발생 시, 믿을 수 없다고 판단하고 복제를 �
 `CREATE USER 'userName'@'%' IDENTIFIED BY 'PASSWORD';`  
 `GRANT ALL PRIVILEGES ON *.* TO 'userName'@'%';` # 이 경우 모든 권한을 준다.  
 
+---  
+
+
+
 

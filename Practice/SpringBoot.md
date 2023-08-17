@@ -5,7 +5,7 @@
 ---
 
 #### DateTime 이 배열로 나오는 문제
-@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul") 붙여준다.  
+@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul") 붙여준다  
 
 ---
 
@@ -225,6 +225,37 @@ jacocoTestCoverageVerification { // 실패하면 빌드실패.
 ```
 
 ---  
+
+#### HikariCP  
+default maximum pool size는 10 이다.  
+모든 connection이 사용중인 상태에서 어떤 트랜잭션이 또 다른 connection을 필요로하는 경우, deadlock 이 발생한다. timeout 기본은 30 이다.  
+
+HikariCP wiki 에서 대략적으로 권장하는 Deadlock을 피하는 최소한의 풀 사이즈 계산법  
+전체 스레드 개수 = Tn  
+하나의 Task에서 동시에 필요한 Connection 수 = Cm  
+`Pool Size = Tn X (Cm - 1) + 1`  
+
+spring.datasource.hikarip.maximum-pool-size 로 설정이 존재함.  
+
+---  
+
+#### Tomcat 설정  
+max-connections : 최대 처리가능한 연결 수. 기본값은 8192.  
+accept-count : max-connections를 넘어서는 추가요청들을 큐에 얼마나 저장해두는지. 기본값은 100  
+
+즉, 요청이 하나도 완료되지 않는다고 가정할때, max-connections + accept-count 를 넘어서는 요청부터는 거절되거나 timeout된다.  
+
+threads.max : 동시요청을 처리할수있는 thread 개수. 기본값은 200  
+
+**accept-count를 늘릴 바에는 max-connections를 늘리는 것으로 충분하지 않나?** : max-connections와 thread를 통해 실제 처리되는 요청은 시스템 리소스를 완전하게 소비하는 것들. accept-count로 저장되어있는 요청들은 리소스를 사용하지 않고 대기하고 있다는 것에 의미가 있다.  
+
+---  
+
+
+
+
+
+
 
 
 

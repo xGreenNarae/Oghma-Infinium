@@ -48,4 +48,13 @@ Shared Cache 로, 트랜잭션 간에 공유되며 Application 의 생명주기�
 
 #### Transactional readonly 
 readonly 는 실제 쿼리호출을 방해하지 않는다. dirty-checking 시에 write를 막는다.
-또한 javax가 아닌 springframework의 Transactional을 import해야 사용할 수 있다.
+또한 javax가 아닌 springframework의 Transactional을 import해야 사용할 수 있다.  
+
+---  
+
+#### CheckedException RollBack  
+기본적으로 롤백되지 않도록 설정되어 있다.  
+@Transactional(rollbackFor = ..) 을 사용하거나, Configuration으로 RollbackRuleAttribute 를 설정할수 있다.  
+
+---  
+

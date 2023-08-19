@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="appender/property.xml"/>
+
+    <!-- Console 로그 설정 -->
+    <springProfile name="test, local, default">
+
+        <include resource="appender/console/query-appender.xml"/>
+        <include resource="appender/console/parameter-appender.xml"/>
+        <include resource="appender/console/console-appender.xml"/>
+
+<!--        <logger name="org.hibernate.SQL" level="DEBUG">-->
+<!--            <appender-ref ref="query-appender"/>-->
+<!--        </logger>-->
+
+        <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE">
+            <appender-ref ref="parameter-appender"/>
+        </logger>
+
+        <logger name="com.example.logexample" level="INFO">
+            <appender-ref ref="console-appender"/>
+        </logger>
+
+    </springProfile>
+
+    <!-- RollingFile 로그 설정 -->
+    <springProfile name="prod, dev">
+
+        <include resource="appender/file/info-appender.xml"/>
+        <include resource="appender/file/warn-appender.xml"/>
+        <include resource="appender/file/error-appender.xml"/>
+
+        <root level="INFO">
+            <appender-ref ref="info-appender"/>
+            <appender-ref ref="warn-appender"/>
+            <appender-ref ref="error-appender"/>
+        </root>
+
+    </springProfile>
+
+</configuration>

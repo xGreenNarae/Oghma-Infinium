@@ -4,7 +4,10 @@
 --- 
 
 #### Logback 에 DBAppender 가 어느버전인가부터 사라진 것 같다.
-직접 구현하라는 것 같은데, 어째서 일까.
+직접 구현하라는 것 같은데, 어째서 일까.  
+A: Logback 1.2.8 버전부터 DBAppender가 제거되었다.[Issue Link](https://jira.qos.ch/browse/LOGBACK-1609)  
+보안취약점의 문제로, 해결이 될 경우 다시 지원될 수 있다고 함.    
+
 
 ---  
 

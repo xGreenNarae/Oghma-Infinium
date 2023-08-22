@@ -14,7 +14,7 @@
 <!--            <appender-ref ref="query-appender"/>-->
 <!--        </logger>-->
 
-        <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE">
+        <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="INFO">
             <appender-ref ref="parameter-appender"/>
         </logger>
 

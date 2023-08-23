@@ -61,6 +61,58 @@ PECS(Producer Extends Consumer Super)라고 부른다고 함.
 
 ---  
 
+#### Java Concurrent Package  
+동시성 프로그래밍과 멀티스레딩을 처리하기 위한 라이브러리.  
+
+**Executor**  
+스레드 풀 생성, 생명주기관리, Task 등록 등  
+
+**ExecutorService**   
+대기열관리, 작업예약 등
+
+**ScheduledExecutorService**  
+ExecutorService와 유사하지만 주기적인 작업이 가능.
+
+**Future**  
+비동기 작업의 결과를 나타내는데 사용한다.  
+
+**CountDownLatch**  
+일부 작업이 완료될때까지 스레드 집합을 차단.  
+카운트 변수를 두어 동기화를 구현하는 방식으로 보임.  
+
+**CyclicBarrier**  
+CountDownLatch와 거의 동일하고, 재사용할수있는점이 다르다고 한다.  
+**Semaphore**  
+말 그대로 세마포어이다.  
+세마포어에 대한 면접 질문용 암기답변이 필요하다면..  
+`여러 스레드 또는 프로세스의 제한된 수의 리소스에 대한 액세스를 제어하는 동기화 기본 요소로, 리소스를 사용할 수 있을 때까지 다른 스레드 또는 프로세스를 차단하면서 정의된 수의 스레드만 진행하도록 허용한다.`  
+
+**ThreadFactory**  
+스레드풀 역할. 필요에 따라 새 스레드를 생성하지않는다는 것.  
+
+**BlockingQueue**  
+생산자-소비자 패턴.  
+
+**DelayQueue**  
+만료시간(사용자 정의 지연)이 완료된 경우에만 요소를 가져올 ㅅ ㅜ 있는 요소의 무한 크기 차단 대기열.  
+head가 가장 많은 지연을 가지며 마지막으로 폴링됨.  
+
+**Lock**  
+Synchronized 와의 주요 차이점은 동기화된 블록이 메서드에 완전히 포함되어 있다는 것.  
+
+**Phaser**  
+CyclicBarrier, CountDownLatch 보다 더 유연한 솔루션.  
+실행을 계속하기 전에 동적 스레드 수가 기다려야하는 재사용 가능한 장벽 역할.  
+
+**Atomic**  
+동기화 되어있는 변수 제공.  
+
+
+[예제 코드](./examples/java-concurrent/ExecutorExample.java)
+
+---  
+
+
 
 
 

@@ -2,7 +2,6 @@
 
 <included>
     <appender name="error-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-
         <file>${LOG_PATH}/error.log</file>
 
         <filter class="ch.qos.logback.classic.filter.LevelFilter">

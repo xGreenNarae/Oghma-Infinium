@@ -22,6 +22,16 @@
             <appender-ref ref="console-appender"/>
         </logger>
 
+        <include resource="appender/file/info-appender.xml"/>
+        <include resource="appender/file/warn-appender.xml"/>
+        <include resource="appender/file/error-appender.xml"/>
+
+        <root level="INFO">
+            <appender-ref ref="info-appender"/>
+            <appender-ref ref="warn-appender"/>
+            <appender-ref ref="error-appender"/>
+        </root>
+
     </springProfile>
 
     <!-- RollingFile 로그 설정 -->

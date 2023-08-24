@@ -97,15 +97,16 @@ CountDownLatch와 거의 동일하고, 재사용할수있는점이 다르다고 
 만료시간(사용자 정의 지연)이 완료된 경우에만 요소를 가져올 ㅅ ㅜ 있는 요소의 무한 크기 차단 대기열.  
 head가 가장 많은 지연을 가지며 마지막으로 폴링됨.  
 
-**Lock**  
-Synchronized 와의 주요 차이점은 동기화된 블록이 메서드에 완전히 포함되어 있다는 것.  
-
 **Phaser**  
 CyclicBarrier, CountDownLatch 보다 더 유연한 솔루션.  
 실행을 계속하기 전에 동적 스레드 수가 기다려야하는 재사용 가능한 장벽 역할.  
 
 **Atomic**  
 동기화 되어있는 변수 제공.  
+
+**Synchronized**  
+메소드 레벨에 붙여서 스레드 동기화가 필요한 임계 영역을 프로그래밍할 때 사용할 수 있는 키워드. 모니터 방식을 사용한다. 또는 메소드 블록 내에 synchronized(this) 또는 synchronized(lock) 등으로 블록을 만들 수도 있다. static메소드에 붙이게되면, 인스턴스레벨의 락을 사용하는지 클래스레벨 락을 사용하는지의 차이들이 있다. wait, notify는 lock요구와 반환이다.  
+공유변수를 사용하는 경우 캐시 등에 주의해야 한다.  
 
 
 [예제 코드](./examples/java-concurrent/ExecutorExample.java)

@@ -113,6 +113,14 @@ CyclicBarrier, CountDownLatch 보다 더 유연한 솔루션.
 
 ---  
 
+#### Time을 어떻게 다룰 것인가.  
+LocalDateTime은 시스템 TimeZone설정에 의존한다.  
+Instant는 UTC형식으로 저장하고, 2038년 문제가 해결되어 있다.  
+
+비즈니스는 결국 Client에게 무엇을 제공하느냐가 중요하기 때문에, 필요할 경우 주고받는 데이터에 Client의 TimeZone 정보를 포함하여 처리할 수 있다.  
+
+---  
+
 
 
 

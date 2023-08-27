@@ -104,6 +104,19 @@ FailOver등도 쉽게 지원
 **Redis Metrics**  
 `info all` 명령으로 Redis 자체에서 제공해주는 Metrics를 확인할 수 있다.  
 
+- memory  
+used_memory_rss : 가장먼저확인할것. 사용중인 실제 물리메모리의 양. 사용량이 많으면 Swap이 일어나서 성능이 떨어짐.  
+used_memory : 현재 Redis가 계산하고 있는 사용메모리양.  
+mem_fragmentation_ratio : 1보다 높으면 fragmentation이 높다. 1보다 적으면 swap이 발생하고있다고 보면된다.  
+
+- stats  
+instantaneous_ops_per_sec : 초당실행명령수.  
+...  
+
+- client  
+- Replication  
+
+commandstats 파트의 cmdstat_keys:calls를 잘 확인해야 한다고 한다.(모니터링 툴에서 잡아두고 쓰는 경우 등)  
 
 
 ---  

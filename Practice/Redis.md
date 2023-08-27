@@ -101,6 +101,12 @@ Cache 솔루션으로 많이 사용할 수 있는데, 여기서 중요한 것은
 Redis Managed Service  
 FailOver등도 쉽게 지원  
 
+**Redis Metrics**  
+`info all` 명령으로 Redis 자체에서 제공해주는 Metrics를 확인할 수 있다.  
+
+
+
+---  
 
 
  

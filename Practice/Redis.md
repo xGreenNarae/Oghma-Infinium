@@ -121,6 +121,22 @@ commandstats 파트의 cmdstat_keys:calls를 잘 확인해야 한다고 한다.(
 
 ---  
 
+#### Key Naming Convention  
+관례는 콜론이다. 슬래쉬를 사용하는것을 쉽게 떠올릴수있으나, 비판적인 의견들이 있고 이유를 아직 이해하지는 못했음.  
+
+일반적으로 이렇게.  
+`user:1000:password`  
+
+네임스페이스 구분 기호로 콜론을 사용하고, 키의 ID부분에는 해시를 사용할 수 있다.  
+`location:building#23`  
+
+`object-type:id:field` 예제도 있다.  
+
+단어구분에 `.` 을 사용하는 사람도 있다.  
+`object.type:id:field`  
+
+---  
+
 
  
 

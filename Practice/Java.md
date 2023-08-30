@@ -121,6 +121,10 @@ Instant는 UTC형식으로 저장하고, 2038년 문제가 해결되어 있다.
 
 ---  
 
+#### Interface Specification은 Exception을 포함한다.  
+
+---  
+
 
 
 

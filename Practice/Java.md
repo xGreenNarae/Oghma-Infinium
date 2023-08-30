@@ -52,7 +52,7 @@ IntegerCache는 기본적으로 -128 ~ 127 까지의 Integer 객체를 캐싱한
 #### Generic  
 타입을 일반화 한다. 목적은 Type Safety 와 유연성의 조화를 이루는 것.  
 구 버전 자바 코드와의 호환성을 위해, 바이트코드레벨에서는 제거된다. Object타입을 이용해서 수동으로 타입변환을 하면서 사용할 수도 있다. 이것을 편리하게 만든것이 Generic.  
-제네릭 타입 간에는 상속관계가 없다. 따라서 `<? extends A>` 라는 와일드카드를 사용한다.
+제네릭 타입 간에는 상속관계가 없다. 따라서 `<? extends A>` 라는 와일드카드를 사용한다. 순수하게 T, ? 등의 제네릭타입은 unbounded Type이라하고, 규약이 정해지면 bound type이라고 부르기도 함.  
 `<? extends A>` 는 A와 A의 하위타입을 의미하고,  
 `<? super A>` 는 A와 A의 상위타입을 의미한다.  
 `List<? super/extends A>` 의 예시를 들어보자면,  
@@ -124,6 +124,20 @@ Instant는 UTC형식으로 저장하고, 2038년 문제가 해결되어 있다.
 #### Interface Specification은 Exception을 포함한다.  
 
 ---  
+
+#### Java Collection, Map  
+**Collection**  
+순서나 집합과 관련한 자료구조 모음  
+List : Vector(thread-safe), ArrayList, LinkedList, Stack  
+Set : HashSet, SortedSet(-> TreeSet)  
+
+**Map**  
+키-값 자료구조  
+HashMap, HashTable(thread-safe), SortedMap(-> TreeMap)  
+ConcurrentHashMap : HashTable + 성능. 동시읽기+쓰기Lock  
+
+
+
 
 
 

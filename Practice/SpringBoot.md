@@ -333,6 +333,20 @@ threads.max : 동시요청을 처리할수있는 thread 개수. 기본값은 200
 
 ---  
 
+#### Spring Retry  
+외부 API 호출 등, 일시적인 실패로 여러 번 재시도해주는 처리가 필요할 경우 사용할 수 있는 기술.  
+resilience4j 를 사용할 수도 있으나 이쪽은 CircuitBreaker와 같이 사용되는 류 라고.. (자세히는 모르겠음)  
+설정 이후, 다음과 같이 간단하게 적용 가능.    
+```
+@Retryable(
+	value = {RuntimeException.class}, 
+	maxAttempts = 2, 
+	backoff = @Backoff(delay = 3000)
+)
+```
+maxAttempts가 모두 실패하였을 경우(FallBack)에 대한 처리로 `@Recover`를 사용할 수 있다.  
+
+---  
 
 
 

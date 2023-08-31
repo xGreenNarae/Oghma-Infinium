@@ -348,8 +348,20 @@ maxAttempts가 모두 실패하였을 경우(FallBack)에 대한 처리로 `@Rec
 
 ---  
 
+### IntelliJ 환경에서 실행 오류 관련  
+
 #### java.lang.IllegalStateException: Module entity with name: ... should be available  
 settings.gradle의 rootProject.name 이 대소문자까지 올바르게 써있는지 확인.  
+
+#### Gradle Dependency 들이 load되지 않을때..  
+cache invalidate, restart도 해보고..  
+오래된 프로젝트인 경우, IntelliJ IDEA 업데이트와 관련한 오류일 수도 있다. 프로젝트 내의 .idea 폴더를 삭제하고 재시작하면 해결될 수 있음.  
+
+#### Code Color Scheme 적용되지 않을때.  
+사실 IntelliJ의 문제는 아닐것이고, SpringBoot를 사용하고 있는 환경에서 source root directory 설정을 해줘야 해결되는 경우가 있음.  
+이 경우, `src/main/java` 가 되겠다.  
+
+---  
 
 
 

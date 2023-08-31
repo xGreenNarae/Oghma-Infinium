@@ -344,10 +344,12 @@ resilience4j 를 사용할 수도 있으나 이쪽은 CircuitBreaker와 같이 �
 	backoff = @Backoff(delay = 3000)
 )
 ```
-maxAttempts가 모두 실패하였을 경우(FallBack)에 대한 처리로 `@Recover`를 사용할 수 있다.  
+maxAttempts가 모두 실패하였을 경우(FallBack)에 대한 처리로 `@Recover`를 사용할 수 있다. parameter도 똑같이 넘겨받을 수 있다.  
 
 ---  
 
+#### java.lang.IllegalStateException: Module entity with name: ... should be available  
+settings.gradle의 rootProject.name 이 대소문자까지 올바르게 써있는지 확인.  
 
 
 

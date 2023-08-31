@@ -10,7 +10,7 @@ update query 이후, 변경된 데이터를 조회하려면 컨텍스트를 비�
 ### Owning Side, Non-Owning Side
 - JPA 에서 공식적으로 사용하는 표현. 연관관계의 주인 정도가 되겠다. 조회 시 기준이 되기 때문이라고 추측.  
 - ManyToOne 이 FK가 붙는 쪽이고, 여기가 Owning Side. JoinColumn 은 단순히(아마도?) 필드 이름을 명시하는 것.
-- OneToMany 에서 많은 문제가 발생하는데(?), 이 쪽은 기본적으로 non-owning side. 또한 기본적으로는 별도의 join table 을 생성하는 것이고, mappedBy 를 명시해줘야만 join column 이 된다.
+- OneToMany 에서 많은 문제가 발생하는데(?), 이 쪽은 기본적으로 non-owning side. 또한 기본적으로는 별도의 join table 을 생성하는 것이고, mappedBy 를 명시해줘야만 join column 방식이 된다.
 
 ---
 ---
@@ -26,7 +26,7 @@ update query 이후, 변경된 데이터를 조회하려면 컨텍스트를 비�
 
 ---
 
-#### CheckedException은 RollBack 되지 않는다
+#### CheckedException은 "기본적으로" RollBack 되지 않는다
 
 ---
 

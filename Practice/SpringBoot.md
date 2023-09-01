@@ -363,6 +363,13 @@ cache invalidate, restart도 해보고..
 
 ---  
 
+#### SlF4J에서 Placeholder를 사용하여 불필요한 문자열 연산을 생략할 수 있다.  
+log.error("...{}", value) 의 경우, 이 로그레벨(에러)이 아닌경우 문자열 연산을 수행하지 않는다고 함.  
+
+---  
+
+
+
 
 
 

@@ -17,7 +17,7 @@ update query 이후, 변경된 데이터를 조회하려면 컨텍스트를 비�
 ---
 
 #### Bean내부에서 같은클래스의 method를 호출할때는 Transactional이 동작하지 않는다
-실행 컨텍스트가 annotation 을 읽는 시점을 생각해보자.  
+Spring AOP는 Proxy 객체를 사용하는데, Self-invocation상황에서는 this를 통해 호출하기 때문.  
 
 ---
 

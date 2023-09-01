@@ -33,7 +33,7 @@ user: 'user'
 password: PASSWORD
 locations: classpath:db/migration
 ```  
-resources/db/migration 하위에 V1__init.sql 등의 sql 파일로 변경이력을 관리한다.  
+`resources/db/migration` 하위에 V1__init.sql 등의 sql 파일로 변경이력을 관리한다.  
 변경은 계속 쌓여나가야한다.  
 언더바가 두 개 인것에 주의.  
 데이터가 이미 들어있는 상태로 시작한다면, baseline-on-migrate 속성 설정을 켜주도록 한다.  

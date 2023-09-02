@@ -484,6 +484,7 @@ http.formLogin().disable();
 `SecurityContextHolder.getContext().setAuthentication(authentication);`  
 이런 부분이다. 물론 위에서 stateless 설정을 해주었기 때문에, 요청주기에 따라 서버에서 해당 객체의 정보를 유지하지 않고 삭제하게 된다.  
 
+[잘 설명된 블로그](https://datamoney.tistory.com/334)  
 
 ---  
 

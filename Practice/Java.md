@@ -136,6 +136,13 @@ Set : HashSet, SortedSet(-> TreeSet)
 HashMap, HashTable(thread-safe), SortedMap(-> TreeMap)  
 ConcurrentHashMap : HashTable + 성능. 동시읽기+쓰기Lock  
 
+---  
+
+#### JDK 배포판에 대해서  
+Eclipse Temurin, Zulu, Amazon Corretto, Microsoft, Oracle 등... 궁금하다면 대략 볼만한글 [링크](https://www.lesstif.com/java/jdk-whichjdk-com-125305293.html)  
+
+---  
+
 
 
 

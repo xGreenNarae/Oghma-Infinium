@@ -224,7 +224,10 @@ jacocoTestCoverageVerification { // 실패하면 빌드실패.
 		}
 	}
 }
-```
+```  
+
+커버리지를 충족시키지 못한경우, 빌드 과정을 실패시키는 예제이고..  
+`jacocoTestCoverageVerification` 부분을 생략한 뒤, GitHub Actions 등의 CI과정에서 report.xml만 읽어서 PR과 함께 띄워주는 방식으로 사용하는 것을 생각해볼 수도 있겠다.  
 
 ---  
 

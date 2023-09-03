@@ -122,6 +122,21 @@ jobs:
 ```  
 위의 경우 `mikepenz/action-junit-report@v3.8.0` 를 사용하고 있는데, 테스트 결과를 PR에 알려주는 역할. GitHub Actions Market에서 적절히 찾아서 사용하도록 하자.  
 
+
+```
+- name: Gradle Caching
+        uses: actions/cache@v3.3.1
+        with:
+          path: |  
+              ~/.gradle/caches
+              ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+              ${{ runner.os }}-gradle-
+```  
+Gradle SpringBoot Caching 예시.  
+
+
 ---  
 
 #### PR을 로컬로 가져오기  

@@ -461,6 +461,10 @@ http.formLogin().disable();
 
 [잘 설명된 블로그](https://datamoney.tistory.com/334)  
 
+Controller의 Parameter에서 인증정보를 가져올때..  
+Filter에서 SecurityContextHolder에 Authentication객체를 등록할때, `UsernamePasswordAuthenticationToken`을 등록한다면 첫번째 인자로 UserDetails를 상속하는 타입의 Principal이 담기는데..  
+`Authentication` 타입을 이용한다면, getPrincipal()로 이것을 가져와서 사용할수있고.. `@AuthenticationPrincipal` 어노테이션을 사용한다면 그 자체로 Principal 이다.  
+
 ---  
 
 

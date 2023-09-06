@@ -58,3 +58,33 @@ readonly 는 실제 쿼리호출을 방해하지 않는다. dirty-checking 시�
 
 ---  
 
+#### Controller Pageable parameter 
+Controller parameter 에서 Pageable객체를 직접 받을 수 있는데..  
+
+```
+@GetMapping('/api')
+    public Response<...> method(Pageable pageable) {
+        return ... ;
+    }
+```    
+
+요청 파라미터가 다음과 같은 형식이 된다.  
+`/api?page=0&size=3&sort=id,desc&sort=username,desc`  
+
+글로벌 설정으로 `spring.data.web.pageable.default-page-size=20  
+개별메소드 설정으로 다음과 같은..  
+```
+public String list(@PageableDefault(size = 12, sort = “username”,  direction = Sort.Direction.DESC) Pageable pageable) {
+    ... 
+} 
+```  
+
+Page parameter 가 둘 이상일 경우 Qualifier를 사용한다.  
+```
+public String list(@Qualifier("member") Pageable memberPageable, @Qualifier("order") Pageable orderPageable, ...){
+    ...
+}
+```  
+`/members?member_page=0&order_page=1`  
+
+---  

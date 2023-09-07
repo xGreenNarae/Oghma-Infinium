@@ -154,6 +154,8 @@ Eclipse Temurin, Zulu, Amazon Corretto, Microsoft, Oracle 등... 궁금하다면
 요소들은 인터페이스에 메소드를 선언하듯 만든다. 기본타입이나 배열 등을 모두 사용할 수 있다.  
 default 로 기본값을 설정할 수 있다.  
 
+annotation은 말 그대로 Flag 역할. 아마도 무언가 복잡한 처리를하는 예제를 위해 이 단락을 찾아왔다면, annotation 자체에 대한 것이 아닌 AOP에 대한 부분을 찾아봐야 할 것임.  
+
 ---  
 
 

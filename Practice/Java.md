@@ -143,6 +143,18 @@ Eclipse Temurin, Zulu, Amazon Corretto, Microsoft, Oracle 등... 궁금하다면
 
 ---  
 
+#### Annotation  
+
+`@Target` : Annotation이 어떤 코드에 붙을 수 있는가. Type의 경우는 Class와 Enum을 의미한다.  
+`@Retention` : default는 CLASS이고 바이트코드까지에 관여한다는 의미, SOURCE는 컴파일이전, RUNTIME은 말 그대로 런타임에 리플렉션등이 참조할수있다.   
+`@Documented` : Javadoc에 노출된다.
+`@Inherited` : 이것이 붙은 Annotation은 자식클래스도 적용되게 한다.  
+`@Deprecated` : 컴파일러가 경고를 표시.  
+
+요소들은 인터페이스에 메소드를 선언하듯 만든다. 기본타입이나 배열 등을 모두 사용할 수 있다.  
+default 로 기본값을 설정할 수 있다.  
+
+---  
 
 
 

@@ -492,8 +492,36 @@ ex) @annotation(org.springframework.transaction.annotation.Transactional) : Tran
 @PointCut과 Advice를 분리하면, PointCut을 변수처럼 다룰 수 있다.(가독성, 재사용성)  
 
 
+---  
 
+#### Server Sent Events  
+SSE 개념..  
+서버에서 클라이언트로 단방향 통신 즉, 서버푸쉬가 필요할때 적합..  
+지속연결을 사용한다. HTTP/1.1 의 경우도 6개 까지의 동시접속을 허용한다고하고.. HTTP/2 의 경우 기본값이 100이라고 한다.  
 
+요청, 응답간에 MIME Type을 `text/event-stream`으로 맞춰줘야함. Accept, Content-type  
+바이너리 데이터는 전송할수 없다고하고, UTF-8 로 전송하라고 한다.  
+```
+event: type1
+data: An event of type1.
+data2: Data2.
+
+event: type2
+data: An event of type2.
+```
+이벤트는 필드를 가질수있고 줄바꿈으로 구분되고.. 이벤트 간 구분은 줄바꿈 두개로 한다고..  
+(여기까지 표준의 내용들을 확실하게 찾아보지 않았음)  
+
+SpringBoot에서..  
+SseEmitter라는 API가 제공된다.  
+
+Practical한 이야기들은..  
+첫 응답시 데이터를 무엇이든 포함해서 보내도록 하자.(이유?)  
+jpa open-in-view가 true라면, HTTP Connection이 열려있어야 하므로.. 동시에 DB Connection도 열려있게됨에 주의.  
+Nginx등의 프록시를 사용할경우, Connection header와 http version에 주의. 추가로 Nginx의 proxy buffering 기능도 주의.(X-accel 기능에 대해서..)   
+SseEmitter를 메모리에 저장할경우.. 분산환경에서 주의..  
+
+---  
 
 
 

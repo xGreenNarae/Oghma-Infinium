@@ -10,7 +10,7 @@ log4j 의 경우, 2015년 개발이 중단되었다고함. 현재 log4j2 를 사
 syntax는 기본적으로 xml이나, groovy를 지원한다. xml을 사용하여 설정할수도있고, Configuration을 사용하여 설정할 수도 있다.  
 개인적으로 실행환경 구분 등까지 감안하면 xml을 사용하는 것이 깔끔해보인다. 또한 Automatic reloading of configuration files 를 지원한다. 즉, 주기적인 설정변경을 스캐닝하여 서버의 재기동없이 설정을 유연하게 변경할 수 있다고 하는데 제대로 사용하는법에 대해 숙지하지 못했음.       
 logback.xml 이 아닌, logback-spring.xml 을 사용하면 application property를 불러올 수 있다고 한다.(권장)  
-레벨은 error, warn, info, debug, trace 가 있다. error의 경우, 한 밤 중에 시스템 관리자가 침대에서 일어나서 작업에 착수해야 할 수준을 의미한다고 한다(stackoverflow)  
+레벨은 error, warn, info, debug, trace 가 있다. error의 경우, **한 밤 중에 시스템 관리자가 침대에서 일어나서 작업에 착수해야 할 수준**을 의미한다고 한다(stackoverflow)  
 org.hibernate.type 을 trace레벨로 찍으면, 바인딩 파라미터 값을 콘솔에서 확인 가능하다.  
 
 

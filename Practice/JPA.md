@@ -52,6 +52,15 @@ readonly 는 실제 쿼리호출을 방해하지 않는다. dirty-checking 시�
 
 ---  
 
+#### Import Id  
+Id annotation을 import 할때,  
+javax.. Id 와 org.springframework.. 이 있는데,  
+후자는 NoSQL에 대한 지원용이라고 한다.    
+
+헷갈리지 말것은, Entity 와 Transactional 등의 어노테이션에도 이와 같이 두개의 Import가 있으나 이 쪽은 Entity의 경우 javax(다른것은 deprecated), Transactional의 경우 springframework의 것을 사용하면 된다.  
+
+---  
+
 #### CheckedException RollBack  
 기본적으로 롤백되지 않도록 설정되어 있다.  
 @Transactional(rollbackFor = ..) 을 사용하거나, Configuration으로 RollbackRuleAttribute 를 설정할수 있다.  

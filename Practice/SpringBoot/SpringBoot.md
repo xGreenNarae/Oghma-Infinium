@@ -196,6 +196,12 @@ SseEmitter를 메모리에 저장할경우.. 분산환경에서 주의..
 
 ---  
 
+#### Exception Handler, Annotation에 선언한 class와 method parameter로 받는 class 타입이 다른경우, advice 자체에 도달하지 못하는 것 처럼 보이거나 상위타입 Handler에 먼저 도달하는 등 기괴하고 다양하게 펼쳐지는 에러를 경험할 것임.  
+
+---  
+
+
+
 
 
 

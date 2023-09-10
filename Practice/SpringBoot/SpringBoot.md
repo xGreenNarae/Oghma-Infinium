@@ -1,6 +1,10 @@
 ### 인터페이스 타입 빈 주입을 시도하면 자동으로 구현체를 찾는다. 2개 이상이면 기본적으로는 에러다.  
 IoC/DI, AOP, PSA 가 Spring의 3가지 특징.  
-인터페이스 힘을 잘 활용하는것이 중요.  
+
+@Bean 으로 bean을 생성하게 되면, method name이 bean name으로 생성된다.  
+@Qualifier가 없어도 bean name과 field name이 매칭 가능하면 bean을 주입해준다.  
+(!) @Primary가 있으면, bean name을 무시하고 Type 기반으로 Primary인 Bean을 주입한다.  
+@Qualifier 어노테이션이 @Primary 어노테이션보다 우선하여 적용된다.  
 
 ---
 ---

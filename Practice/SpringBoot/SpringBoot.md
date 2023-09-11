@@ -12,6 +12,7 @@ IoC/DI, AOP, PSA 가 Spring의 3가지 특징.
 
 #### DateTime 이 배열로 나오는 문제
 @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul") 붙여준다  
+Date의 경우 당연히 yyyy-MM-dd 까지..  
 
 ---
 
@@ -203,6 +204,16 @@ SseEmitter를 메모리에 저장할경우.. 분산환경에서 주의..
 #### Exception Handler, Annotation에 선언한 class와 method parameter로 받는 class 타입이 다른경우, advice 자체에 도달하지 못하는 것 처럼 보이거나 상위타입 Handler에 먼저 도달하는 등 기괴하고 다양하게 펼쳐지는 에러를 경험할 것임.  
 
 ---  
+
+#### Java 8 date/time type `java.time.LocalDateTime` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310  
+
+Jackson time 직렬화/역직렬화 문제.  
+`'com.fasterxml.jackson.datatype:jackson-datatype-jsr310` 종속성을 추가하여 해결하거나,  
+`new ObjectMapper().registerModule(new JavaTimeModule()).writeValueAsString("DTO Object..");`  
+와 같이 해결할 수 있음.  
+
+---  
+
 
 
 

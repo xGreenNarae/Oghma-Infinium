@@ -42,8 +42,20 @@ spring.servlet.multipart.max-request-size=5MB
    
 ---  
 
+#### JSON과 Multipart를 같이 받으려면 ?  
+```
+@PostMapping(path = "/file-upload-with-json", consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE})
+    public String uploadWithJson(@RequestPart final JsonDto dto,
+                                 @RequestPart final List<MultipartFile> files){
+        ...
+    }
+```  
 
+와 같은 예제를 사용할 수 있다.  
 
+request쪽에서는 form-data 로 각각 application/json, image/jpeg 등 content-type을 나누어 보내면 된다.  
+
+---  
 
 
 

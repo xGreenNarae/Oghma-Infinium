@@ -146,7 +146,34 @@ Gradle SpringBoot Caching 예시.
 
 ---  
 
+#### GitHub 권한, Branch Protection..    
+오픈소스 방식..  
+Contributor는 자유롭게 repository를 fork하여 작업 이후 PR을 제출할 수 있고, Collaborator들은 이 PR을 merge 할 수 있다.  
 
+개인 계정으로 만든 public/private repository에서는 저장소 생성자가 admin 역할을 갖는다. 이외에 collaborator들의 역할을 지정하건 변경할 수 없다.  
+
+organization으로 만들 경우, role을 지정 및 변경 할 수 있다.  
+
+settings - branch 에서 간단한 protection 설정을 할 수 있고, 이외의 역할이나 팀 별 권한 차등을 강제하기 위해서는 ruleset을 지정해야 한다.  
+
+**Require signed commits**  
+대략.. GitHub에 올라오는 것들은 실제로 로컬에서 GitHub계정 주인이 commit한 것인지를 보장할 수 없다고 함. 따라서 로컬에서 gpg key.. 를 이용해 서명하는 것(GitHub에도 key가 등록되어야 함). GitHub에서 Verified 표시를 확인할 수 있다고 한다.    
+
+**Require status checks to pass before merging**  
+merge 이전에 특정 Actions Job등을 반드시 pass해야하는것을 강제하는 것이라고 한다.  
+
+**Require linear history**  
+Merge commit을 금지하고, Squash and merge와 Rebase and merge만 허용한다. history를 하나의 라인으로 단순하게 유지하며 쉽게 추적할 수 있게 하기 위함이라고 하는데..    
+
+**Do not allow bypassing the above settings**  
+적용하지 않으면 위의 제한사항들에 경고를 표시해주지만 실행은 허용하게 된다.(PR없이 PUSH 등..)  
+
+---  
+
+#### 원격 브랜치 삭제  
+git push <remote-repo-alias> -d <branch-to-delete>  
+
+---  
 
 
 

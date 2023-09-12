@@ -214,6 +214,20 @@ Jackson time 직렬화/역직렬화 문제.
 
 ---  
 
+#### Application Server TimeZone 설정  
+
+SpringBootApplication에 다음 메소드를 추가한다..  
+
+```
+@PostConstruct
+	public void init() {
+		TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
+	}
+```
+
+---  
+
+
 
 
 

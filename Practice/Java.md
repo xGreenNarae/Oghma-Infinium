@@ -158,6 +158,23 @@ annotation은 말 그대로 Flag 역할. 아마도 무언가 복잡한 처리를
 
 ---  
 
+#### 생성자는 상속이 되지 않는다. super 키워드 사용해서 처리할 것..    
+
+---  
+
+#### Format String..  
+`String.format("... %s", variable);`  
+문자열 속에서 %s 를 읽기가 어려우니 가독성이 떨어진다 ?  
+
+`MessageFormat.format("{0} is number", number);`  
+인덱스를 일일이 넣어줘야 함.  
+
+`method( "value is {}", variable );` 처럼 사용하고 싶다면..  
+`String.format( message.replace("{}", "%s"), args);` 를 객체 생성자나 메소드 등에서 처리할 수 있음.  
+
+---    
+
+
 
 
 

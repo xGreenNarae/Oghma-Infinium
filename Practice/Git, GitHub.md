@@ -3,6 +3,19 @@
 - squash commit : 합치고자 하는 커밋의 부모 커밋으로 rebase, 남길 커밋을 제외하고 squash.
 - squash & merge : merge 시에 squash 를 사용하는 것. 대략 깔끔해지는 대신, atomic rollback 이 불가능.  
 
+사용법  
+커밋이 다음과 같다고 하자.  
+`qwer` 3rd commit  
+`asdf` 2nd commit  
+`zxcv` 1st commit  
+`1234` previous commit  
+
+1st, 2nd, 3rd 까지의 커밋을 정리하여 하나로 만들고 싶다면,  
+`git rebase -i 1234`  
+그러면 위에서부터 1st, 2nd, 3rd .. 로 역순으로 표기될것.  
+없앨커밋은 pick -> s 로 바꾸고, 남길 커밋 하나만 pick을 두자.  
+커밋 이름도 변경할수있다.  
+
 ---  
 
 #### git push origin main의 의미  

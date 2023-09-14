@@ -1,4 +1,4 @@
-### Docker  
+### Docker Cheat Sheet  
 docker container 의 기본 게이트웨이는 `172.17.0.1` 이다.  
 
 `docker images`  
@@ -59,3 +59,6 @@ docker rm $(docker ps -a -q)
 `docker logs containerName`  
 
 ---  
+
+#### docker build 명령 사용 시 ERROR: failed to read metadata: unexpected end of JSON input  
+Windows라면 `%USERPROFILE%.docker\contexts\meta` 폴더를 삭제하고 재시도해볼것.  

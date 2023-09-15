@@ -58,6 +58,11 @@ docker rm $(docker ps -a -q)
 컨테이너가 시작이 안되고 터져버렸다면? 로그를 본다.  
 `docker logs containerName`  
 
+컨테이너에게 할당된 IP 주소 확인  
+`docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container_name_or_id>`  
+
+
+
 ---  
 
 #### docker build 명령 사용 시 ERROR: failed to read metadata: unexpected end of JSON input  

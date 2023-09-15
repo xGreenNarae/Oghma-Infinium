@@ -188,6 +188,11 @@ git push <remote-repo-alias> -d <branch-to-delete>
 
 ---  
 
+#### GitHub 에서 특정 파일의 변경기록을 빠르고 편하게 확인하는 법  
+파일을 보고있는 주소의 도메인을 `github-history.netlify.app` 으로 바꾼다.   
+
+---  
+
 
 
 

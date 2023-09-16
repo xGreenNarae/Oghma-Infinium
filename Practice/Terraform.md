@@ -26,7 +26,7 @@ AWS에서 API 키 생성이란, IAM 계정을 생성하고 액세스키와 시�
 
 **2**  
 Provider 라는 개념이 있는데  
-AWS, GCP 등의 범용 클라우드 서비스 뿐 아니라, Github, DataDog 등 특정 기능을 제공하는 서비스, 그리고 MySQL, RabbitMQ, Docker 등 로컬 서비스 등도 제공된다.  
+AWS, GCP 등의 범용 클라우드 서비스 뿐 아니라, GitHub, DataDog 등 특정 기능을 제공하는 서비스, 그리고 MySQL, RabbitMQ, Docker 등 로컬 서비스 등도 제공된다.  
 Resource란, Provider가 제공해주는 조작가능한 대상의 최소 단위.  
 
 특정 폴더 내의 .tf 파일을 모두 읽고 작업을 수행하는 방식.  

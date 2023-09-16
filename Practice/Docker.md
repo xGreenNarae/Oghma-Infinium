@@ -1,6 +1,15 @@
 ### Docker Cheat Sheet  
 docker container 의 기본 게이트웨이는 `172.17.0.1` 이다.  
 
+ubuntu docker 설치  
+`apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common`  
+`curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`  
+`add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" `  
+`apt-get install docker-ce docker-ce-cli containerd.io`  
+
+
+명령어들  
+
 `docker images`  
 `docker rmi imageName`  
 
@@ -67,3 +76,9 @@ docker rm $(docker ps -a -q)
 
 #### docker build 명령 사용 시 ERROR: failed to read metadata: unexpected end of JSON input  
 Windows라면 `%USERPROFILE%.docker\contexts\meta` 폴더를 삭제하고 재시도해볼것.  
+
+
+---  
+
+
+

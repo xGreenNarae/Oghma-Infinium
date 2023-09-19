@@ -175,7 +175,13 @@ annotation은 말 그대로 Flag 역할. 아마도 무언가 복잡한 처리를
 ---    
 
 
+#### Optional.ofNullable(). orElse vs orElseGet
+orElse는 메소드 등이 아닌 값 자체를 넣어야 한다. null이든 아니든 orElse 내부가 실행은 되기 때문이다.
 
+orElseGet은 null일 경우에만 실행된다.
+
+
+---
 
 
 

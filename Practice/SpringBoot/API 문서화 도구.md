@@ -1,3 +1,5 @@
+
+### ePages-de / restdocs-api-spec
 #### Api 문서화에 대해서  
 Swagger와 REST Docs라는 기술을 사용할 수 있는데,  
 각 장점들을 합치고, 단점들을 해소한 구현체가 있다.  
@@ -7,15 +9,15 @@ Swagger와 REST Docs라는 기술을 사용할 수 있는데,
 
 - Swagger의 장점인 **테스트 가능한 API문서**
 - RestDocs의 장점(단점으로 해석할 수도 있지만..)인 **문서의 신뢰성**
-    - 테스트가 완료된 API 에 대해서만 문서 제공.
+    - 테스트가 완료된 API 에 대해서 만 문서 제공.
 - **문서화의 완전 자동화**
-    - Swagger와 RestDocs가 모두 가지고 있던 API가 추가될 때마다 유지보수 되어야 한다는 단점들을 해결
-        - Swagger: Annotation 들이 어딘가에 추가되어야 한다.
+    - Swagger와 RestDocs가 모두 가지고 있던 API가 추가될 때마다 유지 보수 되어야 한다는 단점들을 해결
+        - Swagger: Annotation들이 어딘가에 추가되어야 한다.
         - RestDocs: AsciiDoc에 대한 추가 수정이 필요
-- Swagger의 단점으로 여겨지던 Application의 소스코드에 문서화 코드가 침투하는 문제 또한 해결.
-- AsciiDoc 문법을 이해하고 외우고있어야하는 비용을 없앤다.
+- Swagger의 단점으로 여겨지던 Application의 소스 코드에 문서화 코드가 침투하는 문제 또한 해결.
+- AsciiDoc 문법을 이해하고 외우고 있어야 하는 비용을 없앤다.
 
-구현 예시는 다음과 같다.  
+MockMvc를 사용하는 구현 예시는 다음과 같다.  
 
 spring yml 설정
 ```
@@ -177,3 +179,61 @@ nginx.ingress.kubernetes.io/x-forwarded-prefix: '/{url}/api'  # yaml 부분 설�
 Swagger Api test url 이 build.gradle 에 들어가야함.  
 
 ---  
+
+#### 조금 더 자세한 사용 가이드
+![[Epages API Doc Header.png]]
+
+![[Epages API Doc Example 1.png]]
+privateResource 의 역할은 모르겠음
+회색 처리 된 것과 Deprecated 표시 등 모두 deprecated 설정에 의한 것이다
+
+
+
+
+---
+#### 다른 예시
+
+```
+@DisplayName("소셜 로그인 API")
+    @Test
+    void socialLogin() throws Exception {
+        // given
+        // 생략..
+
+        // when // then
+        mockMvc.perform(
+                        RestDocumentationRequestBuilders.post("/auth/signin")
+                                .param("code", "JKWHNF2CA78acSW6AUw7cvxWsxzaAWVNKR34SAA0AZ")
+                                .param("platform", "KAKAO")
+                )
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andDo(document("socialLogin",
+                        preprocessRequest(prettyPrint()),
+                        preprocessResponse(prettyPrint()),
+                        resource(ResourceSnippetParameters.builder()
+                                .tag("User API")
+                                .summary("소셜 로그인 API")
+                                .formParameters(
+                                        parameterWithName("code").description("발급받은 인가코드"),
+                                        parameterWithName("platform").description("플랫폼 : 'GOOGLE' / 'KAKAO' "))
+                                .responseFields(
+                                        fieldWithPath("code").type(NUMBER).description("상태 코드"),
+                                        fieldWithPath("message").type(STRING).description("상태 메세지"),
+                                        fieldWithPath("data.userId").type(NUMBER).description("유저 ID"),
+                                        fieldWithPath("data.email").type(STRING).description("유저 이메일"),
+                                        fieldWithPath("data.nickName").type(STRING).description("유저 닉네임"),
+                                        fieldWithPath("data.profileImageUrl").type(STRING).description("유저 프로필 이미지"),
+                                        fieldWithPath("data.accessToken").type(STRING).description("액세스 토큰"),
+                                        fieldWithPath("data.refreshToken").type(STRING).description("리프레쉬 토큰"))
+                                .requestSchema(Schema.schema("FormParameter-socialLogin"))
+                                .responseSchema(Schema.schema("UserResponse.Login"))
+                                .build())));
+
+```
+
+
+
+---
+---
+---

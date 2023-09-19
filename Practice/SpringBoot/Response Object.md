@@ -34,3 +34,16 @@ public ResponseEntity<Response> method() {
 	return ResponseEntity.ok().body(Response.success());
 }
 ```
+
+
+JSON 형식은 다음과 같다
+```
+{
+	"success": true | false,
+	"response": Primitive | Array | Object | null,
+	"error": null | {
+		"message": String,
+		"status": int
+	}
+}
+```

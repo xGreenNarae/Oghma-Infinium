@@ -17,6 +17,9 @@ Swagger와 REST Docs라는 기술을 사용할 수 있는데,
 - Swagger의 단점으로 여겨지던 Application의 소스 코드에 문서화 코드가 침투하는 문제 또한 해결.
 - AsciiDoc 문법을 이해하고 외우고 있어야 하는 비용을 없앤다.
 
+현재 단점으로, SpringBoot 2.x 와 호환되는 버전의 경우,
+파일 업로드에 대한 Swagger Test 를 지원하지 않는다.(requestPart)
+
 MockMvc를 사용하는 구현 예시는 다음과 같다.  
 
 spring yml 설정
@@ -187,12 +190,17 @@ Swagger Api test url 이 build.gradle 에 들어가야함.
 privateResource 의 역할은 모르겠음
 회색 처리 된 것과 Deprecated 표시 등 모두 deprecated 설정에 의한 것이다
 
+---
 
-
+#### 주의할 점
+- id 등이 다르더라도, 동일한 url에 parameter 등이 같으면 같은 것으로 취급되는 듯.
+- summary와 description은 하나의 URL 당 하나인 듯. id가 달라서 example을 바꿔서 클릭해도 변하지 않는다..
+- 현재 단점으로, SpringBoot 2.x 와 호환되는 버전의 경우, 파일 업로드에 대한 Swagger Test 를 지원하지 않는다.(requestPart)
 
 ---
 #### 다른 예시
 
+[참조 블로그](https://velog.io/@hwsa1004/Spring-restdocs-swagger-%EA%B0%99%EC%9D%B4-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0#4-%EC%82%BD%EC%A7%88%EA%B8%B0)
 ```
 @DisplayName("소셜 로그인 API")
     @Test

@@ -227,6 +227,9 @@ SpringBootApplication에 다음 메소드를 추가한다..
 
 ---  
 
+#### k8s에서 실행할 때 기본으로 server.forward-headers-strategy 설정이 native로 된다.
+
+---
 
 
 

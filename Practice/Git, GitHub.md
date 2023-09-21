@@ -186,17 +186,14 @@ Merge commit을 금지하고, Squash and merge와 Rebase and merge만 허용한�
 #### 원격 브랜치 삭제  
 git push <remote-repo-alias> -d <branch-to-delete>  
 
----  
+---
 
 #### GitHub 에서 특정 파일의 변경기록을 빠르고 편하게 확인하는 법  
 파일을 보고있는 주소의 도메인을 `github-history.netlify.app` 으로 바꾼다.   
 
----  
+---
 
+#### gitignore 에서 ! 문자는 not을 의미한다. 예를들어 어떤 패턴을 적용시켜두었으나 예외적으로 git에 올리고 싶은 파일패턴은 !를 써준다.
 
+---
 
-
-
-
-	
-			

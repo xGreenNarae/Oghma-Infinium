@@ -88,7 +88,9 @@ kubectl run -it --rm mysql --image=mysql:latest --port=3306 --env="MYSQL_ROOT_PA
 rm 은 실행 후 종료된 pod를 자동으로 제거해주는 옵션.  
 
 
----  
+---
+
+
 
 #### minikube  
 로컬에서 테스트용 클러스터를 실행하는 느낌이다.  

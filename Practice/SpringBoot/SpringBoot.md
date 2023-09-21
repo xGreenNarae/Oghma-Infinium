@@ -95,14 +95,6 @@ threads.max : 동시요청을 처리할수있는 thread 개수. 기본값은 200
 
 ---  
 
-#### SpringBoot Multi Module Project  
-공통 코드를 재사용하기 위함.  
-예를들어, 동일한 Entity와 Repository들을 참조하여 하나는 Api, 또 다른 하나는 Batch 작업을 하는 프로젝트 등을 생각해볼 수 있다.  
-구현은 gradle 설정에 대해 조금 신경쓰면 된다.  
-[예제 코드](./examples/multi-module-example/build.gradle)  
-
----  
-
 #### Spring Retry  
 외부 API 호출 등, 일시적인 실패로 여러 번 재시도해주는 처리가 필요할 경우 사용할 수 있는 기술.  
 resilience4j 를 사용할 수도 있으나 이쪽은 CircuitBreaker와 같이 사용되는 류 라고.. (자세히는 모르겠음)  

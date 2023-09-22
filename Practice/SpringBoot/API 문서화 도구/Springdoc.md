@@ -44,11 +44,11 @@ public class ApiDocConfiguration {
                     .title("SpringBoot Test Server API")  
                     .description("각종 Local Test를 위한 서버 입니다.")  
                     .version("v0.2.0")  
-            )            .externalDocs(  
+            ).externalDocs(  
                 new ExternalDocumentation()  
                     .description("Springdoc 공식문서")  
                     .url("https://springdoc.org")  
-            )            .servers(  
+            ).servers(  
                 List.of(  
                     new Server()  
                         .url("http://localhost:8080")  
@@ -56,7 +56,10 @@ public class ApiDocConfiguration {
                     new Server()  
                         .url("https://test-server.com")  
                         .description("Test Server")  
-                )            );    }}
+                )            
+            );    
+	}
+}
 ```
 
 ![[Springdoc Main.png]]

@@ -40,6 +40,33 @@ c 는 create라는 뜻.
 ---
 
 
+#### git add -p , git commit -v
 
+`git add -p` 작업한 내용물을 변경 단위(hunk)로 `y`, `n` 키를 통해 하나씩 스테이징하는 커맨드.
+
+y와 n 이외에 다른 명령어들.
+```
+y - stage this hunk
+n - do not stage this hunk
+q - quit; do not stage this hunk or any of the remaining ones
+a - stage this hunk and all later hunks in the file
+d - do not stage this hunk or any of the later hunks in the file
+g - select a hunk to go to
+/ - search for a hunk matching the given regex
+j - leave this hunk undecided, see next undecided hunk
+J - leave this hunk undecided, see next hunk
+k - leave this hunk undecided, see previous undecided hunk
+K - leave this hunk undecided, see previous hunk
+s - split the current hunk into smaller hunks
+e - manually edit the current hunk
+? - print help
+```
+
+
+
+`git commit -v` 커밋 이전에 변경사항을 한번 더 확인할 수 있게 해준다.(메시지 입력화면에서)
+
+
+---
 
 

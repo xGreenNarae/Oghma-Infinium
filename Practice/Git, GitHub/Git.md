@@ -32,6 +32,13 @@ maven repository 등 공식 저장소에서 제공하는 외부 의존성 모듈
 
 ---  
 
+#### git branch 생성 + switch 를 하나의 커맨드로  
+
+`git switch -c <new_branch_name>`
+c 는 create라는 뜻.
+
+---
+
 
 
 

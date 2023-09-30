@@ -68,3 +68,10 @@ tasks.withType(JavaCompile) {
 
 source는 버전 고정
 target은 최소 버전을 명시하는 것이라고 한다.
+
+---
+
+#### build vs bootJar
+
+`bootJar` 는 단순히 jar파일을 만드는 작업
+`build` 는 이외에도 test 등 다른 작업들을 포함한다. 시간이 더 걸린다.

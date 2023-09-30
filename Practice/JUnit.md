@@ -28,3 +28,9 @@ MockBean은 조작한 부분 빼고는 작동하지 않음.
 SpyBean은 조작하지 않은 부분들은 정상작동.  
 
 ---  
+
+#### WebMvcTest 에서는 사용할 Controller를 명시하자.
+사용하고 있지 않은 controller의 bean도 생성하려고 하면서, bean creation error가 발생할 수 있다.
+
+---
+

@@ -67,6 +67,8 @@ javax.. Id 와 org.springframework.. 이 있는데,
 
 ---  
 
+### Pageable
+
 #### Controller Pageable parameter 
 Controller parameter 에서 Pageable객체를 직접 받을 수 있는데..  
 
@@ -140,5 +142,64 @@ Page객체를 그대로 Controller에서 응답할 경우, 다음과 같은 속�
     "empty": false
 }
 ```
+
+
+#### Custom Slice 예제
+Controller에서 Pageable을 parameter로 입력 받고, jpa repository를 호출하여 slice를 가져온 뒤, 필요한 필드만 추출하여 dto로 응답하는 예제
+
+```
+# controller
+
+@GetMapping("/")  
+public SliceTestDto sliceTestDto(final Pageable pageable) {  
+  
+    return SliceTestDto.of(sliceTestEntityRepository.findSliceBy(pageable));  
+}
+```
+
+```
+# custom slice base object
+
+@Getter  
+public abstract class RefinedSlice {  
+  
+    protected int pageNumber;  
+    protected int size;  
+    protected boolean hasPrevious;  
+    protected boolean hasNext;  
+  
+    protected RefinedSlice(final Slice<?> slice) {  
+        this.pageNumber = slice.getNumber();  
+        this.size = slice.getSize();  
+        this.hasPrevious = slice.hasPrevious();  
+        this.hasNext = slice.hasNext();  
+    }}
+```
+
+```
+# dto
+
+@Getter  
+public class SliceTestDto extends RefinedSlice {  
+  
+    private List<TestDto> testDtos;  
+  
+    private record TestDto(Integer id, String name) {}  
+  
+    @Builder  
+    private SliceTestDto(final Slice<?> slice, final List<TestDto> testDtos) {  
+        super(slice);  
+        this.testDtos = testDtos;  
+    }  
+    public static SliceTestDto of(final Slice<SliceTestEntity> slice) {  
+        return SliceTestDto.builder()  
+            .slice(slice)  
+            .testDtos(slice.getContent().stream()  
+                .map(entity -> new TestDto(entity.getId(), entity.getName()))  
+                .toList())  
+            .build();  
+    }}
+```
+
 
 ---  

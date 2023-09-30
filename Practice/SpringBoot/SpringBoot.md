@@ -160,7 +160,7 @@ OPTIONS 요청이 애플리케이션에 전달되지 않고 기본 OPTIONS 처�
 
 `HttpMessageNotReadableException` : HTTP 요청 메시지가 올바르게 읽을 수 없을 때 발생하는 예외
 `MissingServletRequestParameterException` : 요청에서 필수 매개변수가 누락된 경우 발생하는 예외
-BindException : 매개변수에 대한 바인딩이 실패할 때 발생하는 예외
+`BindException` : 매개변수에 대한 바인딩이 실패할 때 발생하는 예외
 
 ---  
 

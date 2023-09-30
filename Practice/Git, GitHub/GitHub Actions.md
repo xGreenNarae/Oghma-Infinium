@@ -27,6 +27,21 @@ on:
 	workflow_run 의 경우, 현재 test11작업이 "실행요청을 받을때와 실행이 완료될때" test22작업이 수행되어야 하는것을 의미한다. 이런식의 Chaining을 이어갈수있는데 3개까지만 동작한다고 한다.  
 }
 
+
+**workflow_dispatch**
+수동 트리거 기능으로, jenkins의 build with parameter와 유사하다. POST Request를 통해 이벤트를 발생시킬 수 있고, 수동으로 클릭하는 버튼도 사용할 수 있다고 한다.
+```
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     # 이런 것들은 다 input parameter 이다.
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'
+```
+
 Test 자동화 예제  
 ```
 name: Backend-Test

@@ -200,9 +200,14 @@ SseEmitter를 메모리에 저장할경우.. 분산환경에서 주의..
 #### Java 8 date/time type `java.time.LocalDateTime` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310  
 
 Jackson time 직렬화/역직렬화 문제.  
+
+SpringBoot Controller에서 Object를 return할 때는 발생하지 않으나..
+테스트 코드 등, objectmapper를 수동으로 생성해서 사용할 때 주로 발생..
+
 `'com.fasterxml.jackson.datatype:jackson-datatype-jsr310` 종속성을 추가하여 해결하거나,  
 `new ObjectMapper().registerModule(new JavaTimeModule()).writeValueAsString("DTO Object..");`  
 와 같이 해결할 수 있음.  
+테스트 코드라면 아래쪽을 만들어두고 상속 등으로 공유해서 사용하거나 하자..
 
 ---  
 
@@ -223,8 +228,12 @@ SpringBootApplication에 다음 메소드를 추가한다..
 
 ---
 
+#### Query Parameter 입력 값을 Object 로 바인딩해서 받고 싶을 때,
 
+@RequestParam 으로는 동작하지 않고.. @ModelAttribute 등을 사용하면 된다.
+이유는 현재 모르겠음.
 
+---
 
 
 

@@ -100,3 +100,11 @@ Gradle SpringBoot Caching 예시.
 
 
 ---  
+#### $ {{ secrets.GITHUN_TOKEN }}
+
+GitHub Actions Workflow 에서 사용할 수 있도록 **자동 생성되는 인증 토큰**.
+사용 권한은 workflow가 포함된 repository로 제한된다.
+작업이 완료되면 토큰이 만료된다.
+
+---
+

@@ -48,6 +48,17 @@ jacocoTestCoverageVerification { // 실패하면 빌드실패.
 `jacocoTestCoverageVerification` 부분을 생략한 뒤, GitHub Actions 등의 CI과정에서 report.xml만 읽어서 PR과 함께 띄워주는 방식으로 사용하는 것을 생각해볼 수도 있겠다.  
 [Jacoco PR Comment Report Actions](https://github.com/marketplace/actions/jacoco-report)  
 
+GitHub Actions Workflow 예제
+```
+- name: Add Jacoco Test coverage to PR
+        uses: madrapps/jacoco-report@v1.6.1
+        with:
+          paths: |
+            ${{ github.workspace }}/ci-test/build/reports/jacoco/test/jacocoTestReport.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 80
+          min-coverage-changed-files: 80
+```
 
 
 ---  

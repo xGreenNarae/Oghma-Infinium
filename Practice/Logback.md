@@ -13,6 +13,7 @@ logback.xml 이 아닌, logback-spring.xml 을 사용하면 application property
 레벨은 error, warn, info, debug, trace 가 있다. error의 경우, **한 밤 중에 시스템 관리자가 침대에서 일어나서 작업에 착수해야 할 수준**을 의미한다고 한다(stackoverflow)  
 org.hibernate.type 을 trace레벨로 찍으면, 바인딩 파라미터 값을 콘솔에서 확인 가능하다.  
 
+관행적으로 camelCase를 따른다고 한다.
 
 **패턴**  
 [공식문서](https://logback.qos.ch/manual/layouts.html)  
@@ -48,6 +49,8 @@ maxHistory가 먼저 적용되고, 그다음에 totalSizeCap이 적용된다고 
 
 이외에도 FixedWindowRollingPolicy가 있으나 느리고 문제가 많기 때문에 공식문서에서 권장하지 않는다고함 -> 더이상 사용되지 않는 정책으로 간주한다는 표현이 사용됨 
 maxHistory 필드가 있는데, 초기 값은 0이고, 아카이브의 삭제를 비활성화 한다는 뜻이다. 
+
+
 
 [예제 코드](./examples/log-example/src/main/resources/logback-spring.xml)
 

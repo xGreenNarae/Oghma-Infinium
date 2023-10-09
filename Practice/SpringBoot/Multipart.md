@@ -58,6 +58,8 @@ request쪽에서는 form-data 로 각각 application/json, image/jpeg 등 conten
 ---  
 
 
+#### JUnit Multipart, RequestPart Test
 
+https://blog.paimon.studio/52
 
 

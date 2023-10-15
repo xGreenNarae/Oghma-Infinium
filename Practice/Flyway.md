@@ -15,7 +15,8 @@ locations: classpath:db/migration
 `resources/db/migration` 하위에 V1__init.sql 등의 sql 파일로 변경이력을 관리한다.  
 변경은 계속 쌓여나가야한다.  
 언더바가 두 개 인것에 주의.  
-데이터가 이미 들어있는 상태로 시작한다면, `baseline-on-migrate` 속성 설정을 켜주도록 한다.  
+
+데이터가 이미 들어있는 상태로 시작한다면, `baseline-on-migrate` 속성 설정을 켜고 실행해주도록 한다.  (DB에 `flyway_schema_history` 테이블이 만들어진다.)
 
 기본적인 동작원리에 대해 조금 헷갈릴 수 있는 부분  
 flyway sql script들을 보고 순서대로 데이터베이스에 적용하는 것으로 보인다.(Migration)  
@@ -34,7 +35,6 @@ DDL-AUTO 속성에 대해 헷갈릴 수 있는 부분은, validate로 하였을 
 
 
 이외에 repair등 마이그레이션에 관련한 다른 기능들이 지원된다.  
-
 
 로컬 임베디드 DB인 H2 같은경우, `flyway_schema_history` 테이블 자체가 존재하지 않는 상태에서 매번 새롭게 만들어지기 때문에 당연히 의미없음.  
 
@@ -70,3 +70,13 @@ Patch : 사소한 변경
 		Minor 의 Rule을 따르도록 한다.  
 
 ---  
+
+#### Practice
+
+데이터가 이미 존재하는 DB에 Flyway 를 도입하는 경우,
+
+1. `baseline-on-migrate` 속성을 켜고 연결한 뒤 한번 실행해준다. DB에 Flyway History 테이블이 만들어진다.
+2. Entity를 자유롭게 수정하고, (JPA Buddy 를 사용한다면) Flyway Diff Versioned Migration 도구의 지원을 받아 스크립트를 자동 생성한다.(DB 연결정보를 넣어주면 된다. Entity들을 읽고, DB Table들을 읽어서 변경 내용을 추적하는 것.)
+
+( SQL파일의 이름과 순서에 다시 한 번 주의할 것. )
+

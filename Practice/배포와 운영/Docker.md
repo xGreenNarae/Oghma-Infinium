@@ -72,8 +72,6 @@ docker rm $(docker ps -a -q)
 컨테이너에게 할당된 IP 주소 확인  
 `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container_name_or_id>`  
 
-
-
 ---  
 
 #### docker build 명령 사용 시 ERROR: failed to read metadata: unexpected end of JSON input  
@@ -134,9 +132,13 @@ tar gz 같은 파일은 모두 압축해제하여 추가한다.
 ---
 
 #### var/lib/docker/overlay2 가 디스크를 가득 잡아먹고 있을 때
-`docker system prune --all` 로 해결.
+`docker system prune -all` 로 해결.
 임시 파일들이 쌓이는 경로라고 한다. 
 설정파일을 변경하여, 이 경로를 다른 경로로 잡아두고 사용할 수도 있다.
 
+위 명령어를 입력하면 yes를 추가로 입력해줘야 하는데,
+`docker system prune -af` 로 간단히 하나의 명령어로 줄일 수 있다.
 
-
+**디스크 관련 명령어**
+`docker system df` Images, Containers, Local Volumes, Build Cache 별로 사용중인 사이즈를 확인할 수 있다.
+`docker system df -v` 각 컨테이너 별로 사용중인 사이즈가 나온다.

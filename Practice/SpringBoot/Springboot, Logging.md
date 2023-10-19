@@ -1,7 +1,15 @@
-### Logback  
-Slf4j 의 구현체로는 logback 과 log4j 가 있으니 차이점을 이해한다면 적절히 골라서 사용할 수 있겠다.  
+
+#### @Slf4j 
+
+- `@Slf4j`  는 Lombok 의존성으로 사용 가능하다. 따라서, 테스트 코드 등에서 해당 Annotation을 사용하려 한다면, Lombok 의존성을 추가해주면 된다.
+
+**Slf4j 는 인터페이스이고, 이것의 구현체로 Logback, Log4j2 등이 있다.**
+"기본적으로" 둘 다 SpringBoot 의존성에 추가되어 있는 듯 함.
+
 log4j 의 경우, 2015년 개발이 중단되었다고함. 현재 log4j2 를 사용할 수 있다. logback과의 차이점은 멀티스레드 환경에서 비동기 로거의 처리량과 대기시간이 훨씬 더 짧다고 한다.  
 
+---
+### Logback  
 패키지경로가 ch.qos .. 로 시작하는것을 볼수있는데, Logback 프레임워크의 Creator는 스위스의 QOS.CH Sarl 이라는 이름의 회사라고 한다.  
 `logback-core`는 핵심 코어 컴포넌트  
 `logback-classic`은 slf4j에서 사용이 가능하도록 하는 플러그인 컴포넌트.  
@@ -52,6 +60,7 @@ maxHistory 필드가 있는데, 초기 값은 0이고, 아카이브의 삭제를
 
 
 
-[예제 코드](./examples/log-example/src/main/resources/logback-spring.xml)
+[예제 코드](Practice/examples/log-example/src/main/resources/logback-spring.xml)
 
 ---  
+

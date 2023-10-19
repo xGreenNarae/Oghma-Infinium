@@ -68,6 +68,15 @@ Class level @Validated 로 해결할 수 있다.
 같은 타입의 빈일 경우, 주입받을 때 식별될 필요가 있다. Qualifier, Primary 등을 사용할 수 있고 여기서 같은 타입이란 예를들어 method 의 반환 타입을 의미한다.  
 프로토타입 빈도 있다. 싱글톤이 아니라 일반 객체를 new 로 만드는 것과 동일하게 매번 새로운 객체를 생성한다는 건데, DI의 장점을 사용한다는 것에 의의가 있다.  
 
+빈을 등록해야 빈을 주입할 수 있다.
+`@Controller`, `@Service` .. 등 처럼 우리가 직접 클래스를 만들고 빈으로 등록하려면 `@Component`를 사용할 수 있다. 
+코드를 수정하지 않고 사용하는 외부 라이브러리의 클래스 같은것은 `@Component` 또는 `@Configuration` 클래스를 하나 만들고 `@Bean` 이 달린 method에서 return 해주면 빈이 등록된다.
+
+**정확하지 않은 내용**
+`@Configuration`은 스프링 컨텍스트에 들어있는 Bean을 가져와서 사용하도록 동작한다고 하고(AOP등 사용가능), `@Component`에서 선언한 `@Bean` method는 새로운 인스턴스를 하나 만들어서 빈으로 등록한다고 한다.
+이 문단은 인터페이스 타입 필드에 빈을 주입하는 내용하고는 다른, "빈 등록"에 관한 이야기 이다.
+
+
 ---  
 
 #### HikariCP  
@@ -125,42 +134,12 @@ cache invalidate, restart도 해보고..
 
 ---  
 
-#### SlF4J에서 Placeholder를 사용하여 불필요한 문자열 연산을 생략할 수 있다.  
+#### Slf4j에서 Placeholder를 사용하여 불필요한 문자열 연산을 생략할 수 있다.  
 log.error("...{}", value) 의 경우, 이 로그레벨(에러)이 아닌경우 문자열 연산을 수행하지 않는다고 함.  
 
 ---  
 
 #### IntelliJ 우측 패널에서 Gradle을 열어 "직접 추가한" Dependency 들의 버전을 쉽게 확인할 수 있음.  
-
----  
-
-#### 기본적인 Exception들에는 무엇이 있는가  
-```
-spring:
-  web:
-    resources:
-      add-mappings: false
-  mvc:
-    throw-exception-if-no-handler-found: true
-    dispatch-options-request: false
-```
-`NoHandlerFoundException` : 404처리를 위해 사용할수있다.  
-web: `resources: add-mappings: false`  
-엔드포인트에 없는 주소인 경우 정적 리소스에 대한 매핑을 하지 않음  
-mvc : `throw-exception-if-no-handler-found: true`   
-Spring 기본적으로 생성하는 404 Not Found 응답을 생성하지 않도록 설정    
-mvc : `dispatch-options-request: false`   
-OPTIONS 요청이 애플리케이션에 전달되지 않고 기본 OPTIONS 처리기가 처리하여 간단한 200 OK 응답을 보냄  
-
-`MethodArgumentNotValidException`  
-`ConstraintViolationException` Class Level Validated 를 이용하는 경우, 이것으로 취급되는 것으로 보인다.  
-`MethodArgumentTypeMismatchException` : 주로 Request Parameter 을 binding 하지 못할떄 발생  
-
-`HttpRequestMethodNotSupportedException` : 지원하지 않은 HTTP method 호출 할 경우 발생
-
-`HttpMessageNotReadableException` : HTTP 요청 메시지가 올바르게 읽을 수 없을 때 발생하는 예외
-`MissingServletRequestParameterException` : 요청에서 필수 매개변수가 누락된 경우 발생하는 예외
-`BindException` : 매개변수에 대한 바인딩이 실패할 때 발생하는 예외
 
 ---  
 
@@ -190,10 +169,6 @@ Practical한 이야기들은..
 jpa open-in-view가 true라면, HTTP Connection이 열려있어야 하므로.. 동시에 DB Connection도 열려있게됨에 주의.  
 Nginx등의 프록시를 사용할경우, Connection header와 http version에 주의. 추가로 Nginx의 proxy buffering 기능도 주의.(X-accel 기능에 대해서..)   
 SseEmitter를 메모리에 저장할경우.. 분산환경에서 주의..  
-
----  
-
-#### Exception Handler, Annotation에 선언한 class와 method parameter로 받는 class 타입이 다른경우, advice 자체에 도달하지 못하는 것 처럼 보이거나 상위타입 Handler에 먼저 도달하는 등 기괴하고 다양하게 펼쳐지는 에러를 경험할 것임.  
 
 ---  
 

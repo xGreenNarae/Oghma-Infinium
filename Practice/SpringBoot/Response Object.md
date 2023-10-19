@@ -1,3 +1,6 @@
+
+대략적으로 이런 구조에서 조금씩 바꾸어 사용할 수 있음.
+
 ```
 public interface Response {
     public static Response success() {

@@ -160,3 +160,10 @@ echo ^>^>^> !color!Your commit size is !size!!NORMALB!!NORMALC!
 
 ---
 
+#### git blame
+
+`git blame 파일명` 으로 해당 파일의 수정 기록을 확인할 수 있다.
+여러가지 옵션들이 있는데..
+이런 목적으로 유용하게 써먹을만한게 커맨드라인 도구보다는 IntelliJ 의 경우, `파일 우클릭 - Git - 기록표시` 로 깔끔하게 확인할 수 있다. 
+
+이름이 `blame`인 이유는 제작자의 스타일이 반영된 것으로 보임.

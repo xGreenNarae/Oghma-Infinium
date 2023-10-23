@@ -92,3 +92,5 @@ public class GlobalExceptionHandler {
 ![[Springdoc Validation.png]]
 
 
+---
+

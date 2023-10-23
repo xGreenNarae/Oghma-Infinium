@@ -14,6 +14,6 @@ git add .
 git commit -m "automated push by script"
 git push origin main
 ```
-
+(Obsidian의 Git Plugin을 찾는게 더 나을지도.. ?)
 
 **로컬에서 관리하는 텍스트 자료를 가장 쉽고 편하고 빠르게 공개하고 관리할 수 있는 해결책**

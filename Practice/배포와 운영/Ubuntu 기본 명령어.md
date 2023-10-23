@@ -36,3 +36,9 @@ tar -xvf test.tar
 `df`는 할당된 크기, `du`는 실제 사용 중인 크기를 보여준다.
 
 ---
+
+#### 접속 로그 확인
+
+`last -f /var/log/wtmp`
+
+

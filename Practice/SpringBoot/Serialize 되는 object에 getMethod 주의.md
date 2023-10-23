@@ -4,7 +4,7 @@
 Springdoc이 문서를 만들어버리는 최악의 경우를 살펴보자.
 
 Controller의 Method에 명시된 Parameter는 전부 읽어서 request example json 을 띄워주는데,
-이 때 해당 parameter object(또는 record이거나) 의 "field"를 읽어서 만든다기보다 "getter method"를 읽어서 만들어 내는 것 같다.(정확하지 않음)
+이 때 해당 parameter object(또는 record이거나) 의 "field"를 읽어서 만든다기보다 "getter method"를 읽어서 만들어 낸다. <- Jackson Serializer 가 이렇게 동작하기 때문.
 [그나마 조금이라도 관련 정보를 유일하게 찾은 것](https://springdoc.org/faq.html#_how_can_i_extract_fields_from_parameter_object)
 
 따라서 

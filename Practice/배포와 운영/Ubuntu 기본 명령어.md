@@ -1,19 +1,34 @@
  
+#### 권한 
 
-#### 그룹에 사용자추가
+**그룹에 사용자추가**
 `usermod -aG 그룹이름 사용자이름`
+
+`-rwxrwxrwx` 
+User(소유자), Group, Others(나머지)
+
+**권한 변경**
+1. `chmod ugo+rw test` 
+test라는 이름의 파일 또는 디렉토리에 user, group, others에게 rw권한 추가
+
+2. `chmod o-w test` test에 others에 w권한 제거
+3. 
+4. `chmod -R g+x test`
+test라는 디렉토리와 그 하위 모든디렉토리 및 파일의 group에 x권한 추가
+
+---
 
 #### 백그라운드실행
 `nohup node nodejs_test.js &`  
 nohup : 쉘종료, 사용자로그아웃 등에도 계속실행상태  
 & : 백그라운드실행  
 #### 환경변수  
-터미널을 다시시작하면 설정값이 사라지는 방법  
+1. 터미널을 다시시작하면 설정값이 사라지는 방법  
 `export PATH=$PATH:/home/username/abc`  
 
-`~/.bashrc` 를 수정하여 위 명령어를 마지막에 추가해두면 터미널이 켜질때마다 자동실행된다.  
+2. `~/.bashrc` 를 수정하여 위 명령어를 마지막에 추가해두면 터미널이 켜질때마다 자동실행된다.  
 
-시스템변수 수정  
+3. 시스템변수 수정  
 `/etc/environment`  
 
 #### 압축파일 관련  

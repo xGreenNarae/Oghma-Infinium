@@ -10,6 +10,10 @@ ubuntu docker 설치
 
 명령어들  
 
+docker 그룹에 사용자 추가(재 로그인 해야함)
+`usermod -aG docker <username>`
+
+
 `docker images`  
 `docker rmi imageName`  
 

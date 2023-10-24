@@ -167,3 +167,25 @@ echo ^>^>^> !color!Your commit size is !size!!NORMALB!!NORMALC!
 이런 목적으로 유용하게 써먹을만한게 커맨드라인 도구보다는 IntelliJ 의 경우, `파일 우클릭 - Git - 기록표시` 로 깔끔하게 확인할 수 있다. 
 
 이름이 `blame`인 이유는 제작자의 스타일이 반영된 것으로 보임.
+
+
+---
+
+#### git hooks 
+
+commit 등 git 명령어가 실행되는 시점 전후에 스크립트 실행.
+`.git/hooks/` 하위에 sample파일들이 있다.
+`pre-commit`이라는 이름으로 파일을 두면 commit 시점에 자동 실행됨. 
+예제로 copilot이 자동생성해대는 trailing spaces를 제거한다.
+```
+#!/bin/sh
+
+git diff --cached --name-only | while read file; do
+	sed -i 's/[ \t]*$//' "$file"
+	git add "$file"
+done
+```
+
+python에 `pre-commit 이라는 도구로 미리 만들어진 스크립트들을 공유하는데, 설치하고 yaml설정파일로 가져다 쓰면 된다.
+[링크](https://github.com/pre-commit/pre-commit-hooks)
+

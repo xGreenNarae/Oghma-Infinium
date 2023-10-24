@@ -21,7 +21,7 @@ Spring AOP는 Proxy 객체를 사용하는데, Self-invocation상황에서는 th
 
 ---
 
-#### CasecadeRemove-VS-OrphanRemoval
+#### CasecadeRemove VS OrphanRemoval
 삭제가 아닌, 연관관계의 제거(null) 만으로도 OrphanRemoval 은 삭제를 한다.  
 
 ---

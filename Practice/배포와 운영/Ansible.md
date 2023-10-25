@@ -1,16 +1,19 @@
 이름 뜻은 answer + able 느낌이라고 함.
+분류는 Configuration Management tool 정도 되겠다.
+대안 기술로 **Puppet**이 있는데 이쪽은 오래된 시장 점유율이 큰 제품이고, Ansible과 달리 Agent가 필요하고 구문 실행 이전에 검사가 가능하고.. 아무튼 더 무겁고 풍부한 기술인 듯 함.
 
 #### 환경 설정 자동화 도구 Ansible 기본 개념 및 사용법  
 클라이언트-서버 구조이지만  
 agent가 없는 시스템으로, ssh연결을 사용한다.  
 
+Ansible서버가 될 호스트를 "컨트롤 노드", 클라이언트를 "매니지드 노드" 라고 표현하겠음.  
+
 **인벤토리**  
-관리하고 있는 서버 목록을 가진 파일  
+관리하고 있는 서버(매니지드 노드) 목록을 가진 파일  
 
 **플레이북**  
 구체적으로 실행하게 될 내용들  
 
-Ansible서버가 될 호스트를 "컨트롤 노드", 클라이언트를 "매니지드 노드" 라고 표현하겠음.  
 
 매니지드 노드에 openssh-server를 설정하고..  [참고](./SSH)
 컨트롤 노드의 ssh 공개키를 배포한다.(ssh-copy-id 등)  
@@ -26,6 +29,12 @@ Ansible서버가 될 호스트를 "컨트롤 노드", 클라이언트를 "매니
 [server]
 172.17.0.3
 example.com # 도메인이 없으면 당연히 없어도 됨
+
+# 포트, 계정(중요!) 명시하는 법
+172.17.0.1:20001  # 포트명시 1번방법
+172.17.0.1 ansible_ssh_port=20002 # 포트명시 2번방법 둘중 아무거나.
+172.17.0.2:20001 ansible_user=user # 계정 이름 명시 방법
+
 ```  
 
 ping 을 실행해 볼 수 있다.  
@@ -35,7 +44,6 @@ ansible server -i inventory -m ping
 
 # 유저명을 주고 실행 
 ansible server -i inventory -m ping -u ubuntu
-ansible server -i inventory -m ping -u deploy
 ```
 
 ansible.cfg 구성파일을 설정할 수 있다.  

@@ -1,5 +1,9 @@
  
-#### 권한 
+#### 유저, 권한 
+
+**새로운 사용자 추가**
+`sudo adduser <username>` 
+이후 패스워드 입력
 
 **그룹에 사용자추가**
 `usermod -aG 그룹이름 사용자이름`
@@ -15,6 +19,9 @@ test라는 이름의 파일 또는 디렉토리에 user, group, others에게 rw�
 3. 
 4. `chmod -R g+x test`
 test라는 디렉토리와 그 하위 모든디렉토리 및 파일의 group에 x권한 추가
+
+**등록된 사용자 목록**
+`grep /bin/bash /etc/passwd`
 
 ---
 

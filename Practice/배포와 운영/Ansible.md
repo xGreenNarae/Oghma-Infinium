@@ -1,3 +1,5 @@
+이름 뜻은 answer + able 느낌이라고 함.
+
 #### 환경 설정 자동화 도구 Ansible 기본 개념 및 사용법  
 클라이언트-서버 구조이지만  
 agent가 없는 시스템으로, ssh연결을 사용한다.  
@@ -10,7 +12,7 @@ agent가 없는 시스템으로, ssh연결을 사용한다.
 
 Ansible서버가 될 호스트를 "컨트롤 노드", 클라이언트를 "매니지드 노드" 라고 표현하겠음.  
 
-매니지드 노드에 openssh-server를 설정하고..  
+매니지드 노드에 openssh-server를 설정하고..  [참고](./SSH)
 컨트롤 노드의 ssh 공개키를 배포한다.(ssh-copy-id 등)  
 
 컨트롤 노드에 ansible을 설치한다.  
@@ -80,5 +82,3 @@ $vim nginx-playbook-test.yaml
  
  
 ---  
-
-#### 

@@ -20,7 +20,7 @@ docker 그룹에 사용자 추가(재 로그인 해야함)
 `docker images`  설치된 이미지 목록 확인
 `docker rmi imageName`  이미지 삭제
 
-`docker container ps -a`  실행중인 컨테이너 확인
+`docker container ps -a`  == `docker ps` 실행중인 컨테이너 확인
 `docker rm containerName`  컨테이너 삭제(stop을 먼저해야함)
 `docker start` , `docker stop` , `docker restart`  컨테이너 실행, 중지 관련
 
@@ -66,7 +66,8 @@ bash를 실행시키고 싶은거라면 `docekr exec -it <container_name> /bin/b
 `docker cp <src_path> container:<dst_path>`  
 
 컨테이너정보확인 (네트워크 등)  
-`docker container inspect <container_name>`  
+`docker container inspect <container_name>`  == `docker inspect ..`
+
 
 실행중인 컨테이너 자원 할당 정보 확인
 `docker stats`

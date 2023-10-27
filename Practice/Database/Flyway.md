@@ -73,10 +73,14 @@ Patch : 사소한 변경
 
 #### Practice
 
-데이터가 이미 존재하는 DB에 Flyway 를 도입하는 경우,
+**데이터가 이미 존재하는 DB에 Flyway 를 도입하는 경우**,
 
 1. `baseline-on-migrate` 속성을 켜고 연결한 뒤 한번 실행해준다. DB에 Flyway History 테이블이 만들어진다.
 2. Entity를 자유롭게 수정하고, (JPA Buddy 를 사용한다면) Flyway Diff Versioned Migration 도구의 지원을 받아 스크립트를 자동 생성한다.(DB 연결정보를 넣어주면 된다. Entity들을 읽고, DB Table들을 읽어서 변경 내용을 추적하는 것.)
 
 ( SQL파일의 이름과 순서에 다시 한 번 주의할 것. )
 
+
+**단순 스키마 변경이 아닌, 기존 데이터를 조작하고 옮겨야 하는 경우**
+마찬가지로 DDL 뿐 아니라, DML 까지 Flyway 스크립트에 순차적으로 잘 작성하면 된다.
+(DB를 따로 먼저 변경해버리는게 아니다!!)

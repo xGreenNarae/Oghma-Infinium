@@ -205,8 +205,9 @@ SpringBootApplication에 다음 메소드를 추가한다..
 
 #### Query Parameter 입력 값을 Object 로 바인딩해서 받고 싶을 때,
 
-@RequestParam 으로는 동작하지 않고.. @ModelAttribute 등을 사용하면 된다.
-이유는 현재 모르겠음.
+`@RequestParam` 으로는 동작하지 않고.. `@ModelAttribute` 등을 사용하면 된다.
+
+`@ModelAttribute`는 `multipart/form-data` 형태의 입력을 처리하기 위한 annotation이라고 한다.
 
 ---
 

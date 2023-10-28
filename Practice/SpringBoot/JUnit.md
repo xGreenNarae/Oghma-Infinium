@@ -16,6 +16,24 @@ void test(final int index, final String name) {
 }
 ```
 
+
+#### ParameterizedTest가 1번밖에 실행되지 않을 때
+```java
+@ParameterizedTest  
+@CsvSource(textBlock = """  // textBlock 이 명시되지 않거나, value라고 써있지 않은지 주의.
+    0,0
+    1001,1.0천  
+    1100,1.1천  
+    10000,1.0만  
+    10001,1.0만  
+    11000,1.1만  
+    12345,1.2만  
+    """)
+```
+
+
+
+
 ---
 
 #### JUnit, assertAll  

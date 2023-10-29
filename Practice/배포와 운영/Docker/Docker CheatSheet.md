@@ -20,7 +20,10 @@ docker 그룹에 사용자 추가(재 로그인 해야함)
 `docker images`  설치된 이미지 목록 확인
 `docker rmi imageName`  이미지 삭제
 
-`docker container ps -a`  == `docker ps` 실행중인 컨테이너 확인
+`docker container ps -a`  == `docker ps -a` 실행중인 컨테이너 확인(a옵션을 주지 않으면 status가 Up인것만, a옵션은 Exited인것도 포함해서 보여준다.)
+
+
+
 `docker rm containerName`  컨테이너 삭제(stop을 먼저해야함)
 `docker start` , `docker stop` , `docker restart`  컨테이너 실행, 중지 관련
 

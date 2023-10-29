@@ -52,3 +52,5 @@ SpyBean은 조작하지 않은 부분들은 정상작동.
 
 ---
 
+#### assertJ 장점
+matcher가 assertThat으로 통일되고, "." 입력 후 IDE레벨에서 이후의 matcher들을 눈으로 확인할 수 있음(외우고 있지 않아도 된다.)

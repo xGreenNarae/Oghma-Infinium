@@ -27,11 +27,13 @@ API Token 은 jenkins-profile-API Token 에 있는것을 사용한다.
 작업 생성 시, `Free Style Project`가 아닌, `Pipeline` 을 사용하도록 하자. 자유롭게 스크립트를 작성할 수 있다.
 
 pipeline 스크립트 예제
+```groovy
 pipeline {
 	agent any
 	
 	environment {
 		GIT_URL = "https://ghp_ABCDEFGABCDEFG@github.com/GreenNarae/SomeRepository.git"
+		...
 	} // 변수. $로 가져다 쓰고, 나중에 다른 값으로 대입도 가능.
 	// 주의할점, Groovy에서는 큰따옴표로 감싸야 템플릿 문자열이 적용된다!!"
 
@@ -51,11 +53,17 @@ pipeline {
 		}
 		
 		stage('Deploy') {
-			steps{
-				sh 'docker ps -q --filter name=Name | grep -q . && docker stop Name && docker rm Name'
-				sh 'docker run --name Name -d -p 8000:8000 -it --privileged --network=host ImageName'
-			}
-		}
+	      steps{
+	        sh '''
+	          if [ "$( docker ps -qaf "name=^${SERVER_CONTAINER_NAME}$" )" ]; then
+	            docker stop ${SERVER_CONTAINER_NAME}
+	            docker rm ${SERVER_CONTAINER_NAME}
+	          fi
+	        '''
+	        sh "docker run --name ${SERVER_CONTAINER_NAME} -d -p 8080:8080 -it --privileged ImageName"
+	      }
+
+    }
 
 	   stage('Finish') {
 			steps{
@@ -64,33 +72,34 @@ pipeline {
 		}
 	}
 }
+```
+
 
 보통 git clone 을 받으면, `<repo_name>` 폴더가 생기고 하위에 파일들이 받아진다.
 jenkins git script는, `/var/jenkins_home/workspace/<job_name>` 하위에 `repo_name` 폴더 없이파일들이 생성되므로, **편하게 절대경로를 사용하자**. (sh는 임시폴더가 생성되면서 사용됨..)
 
 **디렉토리를 변경할 때 주의할 점**
-다음과 같은 구문을 사용하는 것이 권장된다.
+다음과 같은 구문을 사용하는 것이 권장된다
 ```
 stage('test') {
-            steps {
-              dir("dirname") { // 큰따옴표를 사용함에 주의할것. Groovy 템플릿문자열
-                  sh'ls -la'
-              }
-            }
-        }
+	steps {
+	  dir("dirname") { // 큰따옴표를 사용함에 주의할것. Groovy 템플릿문자열
+		  sh'ls -la'
+	  }
+	}
+}
 ```
 **한번 더 강조하는 주의사항: Groovy 템플릿 문자열은 큰따옴표를 사용한다
-
 
 sh 를 사용하고 싶다면, 이런식으로 쓸것. (쉘을 실행하는 주체가 sh 마다 정해진 곳에서 실행되는 듯 하다.)
 ```
 sh script:'''
-          #!/bin/bash
-          echo "This is start $(pwd)"
-          mkdir hello
-          cd ./hello
-          echo "This is $(pwd)"
-        '''
+  #!/bin/bash
+  echo "This is start $(pwd)"
+  mkdir hello
+  cd ./hello
+  echo "This is $(pwd)"
+'''
 ```
 
 다음은 잘못이다.
@@ -104,15 +113,14 @@ sh "cp ${DOCKER_FILE} ." // 새롭게 쉘이 켜진다거나로.. 다시 경로�
 
 **특정 이름의 Docker Container 가 이미 존재하는지 확인하고, 존재하면 삭제하는 스크립트**
 ```bash
-
 container_name=myContainerName
 
-if [ "$(docker ps -qf "name=^${container_name}$")" ]; then 
+if [ "$(docker ps -qaf "name=^${container_name}$")" ]; then 
 	docker stop $container_name 
 	docker rm $container_name
 fi
 ```
-
+`-qaf` 옵션 순서에 주의!!
 
 ---
 

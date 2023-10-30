@@ -25,3 +25,6 @@ public class MyClass {
     }
 }
 ```
+
+
+AllArgsConstructor + Builder가 Class Level에 중복으로 선언되어 있는 경우 등, 어떤 Builder가 호출되고 있는지 주의하자. 찾기 어려움.

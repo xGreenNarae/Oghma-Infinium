@@ -59,3 +59,10 @@ warning이 뜨는게 아니라 Exception(`JpaSystemException`)을 발생 시켜�
 
 
 참고로, entity manager의 `setFirstResult`는 조회 시작 위치(offset), `setMaxResults`는 limit에 해당한다.
+
+
+---
+
+#### @Modifying
+JPQL을 사용할 때, 
+Insert, Update, Delete 쿼리에 붙여 줘야 함.

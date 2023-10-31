@@ -20,20 +20,20 @@ statefulset 이라는 리소스도 있는데, 상태를 가지는 애플리케�
 kubectl 설치  
  
 로컬에서 실행하기 위한 minikube 설치..  
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo install minikube-linux-amd64 /usr/local/bin/minikube  
+`curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`
+`sudo install minikube-linux-amd64 /usr/local/bin/minikube `
 
 바이너리 설치  
-curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"  
+`curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl" ` 
 또는  
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" (공식문서)  
+`curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" (공식문서) ` 
 
 
-chmod +x ./ kubectl  
+`chmod +x ./ kubectl`  
 
-sudo mv ./kubectl /user/local/bin/kubectl  
+`sudo mv ./kubectl /user/local/bin/kubectl`  
 
-kubectl version --client  
+`kubectl version --client`  
 버전확인.  
 
 
@@ -65,6 +65,8 @@ create는 기존 리소스가 존재하면 에러
 apply는 선언적구문으로 업데이트같은것도..  
 ```
 
+
+```
 kubectl logs <pod-name>  
 
 kubectl describe <resource-type> <resource-name>  
@@ -74,18 +76,21 @@ kubectl delete service <service-name>
 ...  
 kubectl delete --all pod <pod-name>  
 kubectl delete all --all  
-...  
 
 
 
 
-kubectl exec -it pod-name /bin/bash  
+kubectl exec -it pod-name /bin/bash  // 이건 deprecated 될 예정이라하고
+kubectl exec -it pod-name -- /bin/bash // 이렇게쓰라함. "--" 를 추가.. ㅋㅋ
 
 kubectl run <name> --image <image-name> --port=80  
 
 kubectl run -it --rm mysql --image=mysql:latest --port=3306 --env="MYSQL_ROOT_PASSWORD=<password>"
 
-rm 은 실행 후 종료된 pod를 자동으로 제거해주는 옵션.  
+// rm 은 실행 후 종료된 pod를 자동으로 제거해주는 옵션.  
+```
+
+
 
 
 ---
@@ -95,15 +100,15 @@ rm 은 실행 후 종료된 pod를 자동으로 제거해주는 옵션.
 #### minikube  
 로컬에서 테스트용 클러스터를 실행하는 느낌이다.  
 
-minikube start  
+`minikube start`  
 
-minikube ip  
+`minikube ip`  
 
-minikube service --url <service-name>  # 브라우저에서접근안될때 이주소로..  
+`minikube service --url <service-name>`  # 브라우저에서접근안될때 이주소로
 
 **minikube에 local docker image들을 사용하고싶다면**  
-minikube docker-env 입력하면 도커설정들이나옴..  
-eval $(minikube -p minikube docker-env) 를 입력하면 연결됨.  
+`minikube docker-env` 입력하면 도커설정들이나옴..  
+`eval $(minikube -p minikube docker-env)` 를 입력하면 연결됨.  
 
 
 ---  

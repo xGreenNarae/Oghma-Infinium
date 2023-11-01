@@ -1,10 +1,3 @@
-컨테이너들은 프로세스 마냥 호스트 자원을 사용 가능한 최대치만큼 써먹는게 아니라, 각자에게 할당된 만큼만 사용한다. 즉 서로 경쟁하는 구도가 아니다.
-
-"Docker Container상에서는 Process가 Foreground로 실행되지 않으면 Container는 종료한다"
-
-docker container 의 기본 게이트웨이는 `172.17.0.1` 이다.  
-
----
 
 ubuntu docker 설치  
 `apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common`  

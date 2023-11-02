@@ -1,6 +1,16 @@
 
-### Pageable
 
+#### Page, Slice
+
+Page는 count 쿼리가 나간다. 전체가 몇 페이지인지, 현재 몇 페이지인지(offset)
+
+Slice는 얻고자 하는 사이즈의 +1 만큼 쿼리를 날리고, 결과값의 크기가 원하던 사이즈보다 크다면(완전 일치로하면안된다. 그보다 적은 수가 나올수있어서) hasNext값이 true라고 보는 것.
+
+동작 알아야 한다. 
+JPA Query method의 지원을 벗어나서 구현해야 할 경우, 직접 구현해야 한다.
+
+
+---
 #### Controller Pageable parameter 
 Controller parameter 에서 Pageable객체를 직접 받을 수 있는데..  
 

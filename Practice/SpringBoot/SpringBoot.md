@@ -54,8 +54,7 @@ Class level @Validated 로 해결할 수 있다.
 `@Controller`, `@Service` .. 등 처럼 우리가 직접 클래스를 만들고 빈으로 등록하려면 `@Component`를 사용할 수 있다. 
 코드를 수정하지 않고 사용하는 외부 라이브러리의 클래스 같은것은 `@Component` 또는 `@Configuration` 클래스를 하나 만들고 `@Bean` 이 달린 method에서 return 해주면 빈이 등록된다.
 
-**정확하지 않은 내용**
-`@Configuration`은 스프링 컨텍스트에 들어있는 Bean을 가져와서 사용하도록 동작한다고 하고(AOP등 사용가능), `@Component`에서 선언한 `@Bean` method는 새로운 인스턴스를 하나 만들어서 빈으로 등록한다고 한다.
+`@Configuration`은 CGLIB으로 스프링 컨텍스트에 빈을 등록해두고 가져와서 사용한다, `@Component`에서 선언한 `@Bean` method는 새로운 인스턴스를 하나 만들어서 빈으로 등록한다.
 이 문단은 인터페이스 타입 필드에 빈을 주입하는 내용하고는 다른, "빈 등록"에 관한 이야기 이다.
 
 

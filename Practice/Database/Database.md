@@ -25,5 +25,9 @@ JPA로는 @Where 같은 것을 사용해서 쉽게 관리할 수 있음.
 
 ---  
 
+#### SQL: LIMIT, OFFSET
+LIMIT개를 뽑을건데, OFFSET 번부터 뽑는다.
 
-
+`SELECT * FROM TABLE LIMIT 10, 20`
+뒤 쪽 숫자가 LIMIT
+뽑힌결과의 10번째 레코드부터 20개를 뽑는다.

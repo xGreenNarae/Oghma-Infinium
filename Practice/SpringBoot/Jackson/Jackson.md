@@ -1,6 +1,6 @@
 
 #### DateTime 이 배열로 나오는 문제
-@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul") 붙여준다  
+`@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")` 붙여준다  
 Date의 경우 당연히 yyyy-MM-dd 까지..  
 
 ---

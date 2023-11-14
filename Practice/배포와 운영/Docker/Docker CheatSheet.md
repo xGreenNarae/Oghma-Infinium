@@ -35,7 +35,7 @@ docker 그룹에 사용자 추가(재 로그인 해야함)
 `docker start` , `docker stop` , `docker restart`  컨테이너 실행, 중지 관련
 
 MySQL 실행 예제  
-`docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=<password> -itd -p 3306:3306 mysql:latest`  
+`docker run --name mysql -e MYSQL_ROOT_PASSWORD=<password> -itd -p 3306:3306 mysql:latest`  
 -p : 포트바인딩. 외부포트 : 내부포트  
 -d : 백그라운드실행  
 -it : 대화형으로 사용하기 위함  

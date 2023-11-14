@@ -12,6 +12,10 @@ Settings - 에디터 - 검사 - 코드스타일 이슈 기능을 사용하자.
 
 ### 나의 IntelliJ 설정
 
+
+**Font**
+Monaspace Neon Var Italic, JetBrains Mono
+
 #### Layout
 `설정 - 모양 및 동작 - 모양 - 도구 창 - 와이드스크린 도구 창 레이아웃`
 VSCode와 동일하게 하단 터미널영역의 "가로길이"가 좌측 프로젝트 윈도우를 침범하지 않게 한다.
@@ -19,6 +23,7 @@ VSCode와 동일하게 하단 터미널영역의 "가로길이"가 좌측 프로
 #### 사용하는 Plugins
 **일반**
 `Material Theme UI` + `Atom Material Icons` 파일 종류 별로 프로젝트 윈도우에서 아이콘을 다르게 해서 가독성을 높임
+테마는 `Atom One Dark (Material)`
 `CodeMetrics` 코드 복잡도를 보여준다
 `GitHub Copilot` 코딩 도구
 `Key Promoter X` 크게 유용한가는 모르겠지만, 수동 액션을 취했을 때 사용가능한 단축키를 알림을 띄워준다.

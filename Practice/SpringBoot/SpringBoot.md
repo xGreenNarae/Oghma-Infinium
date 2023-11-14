@@ -179,9 +179,29 @@ SpringBootApplication에 다음 메소드를 추가한다..
 
 ---
 
+#### Profile 우선순위
+스프링의 기본 포트는 8080이다.
 
+다음과 같은 설정을 가정하자. 
 
+기본프로필(application.yml)
+```yml
+server.port: 5000
+```
 
+다른 프로필(application-production.yml)
+```yml
+
+``` 
+(해당 설정이 명시적으로 적용되어 있지 않다는 뜻)
+
+이 상황에서, `java -jar -Dspring.profiles.active=production ...jar` 명령어를 통해 런타임 프로필 옵션을 주고 실행하게 되면,
+실행되는 포트는 5000이 된다.
+
+즉, **명시한 프로필의 값만 사용하는 것이 아닌, 기본 프로필에 적힌 값도 적용이 된다.(우선순위를 높였을 뿐)**
+
+따라서 반드시, 기본 프로필에서 설정한 값과 다르게 적용되어야 하는 내용을 명시적으로 기록하자.
+또는, `application.yml`에는 `spring.profiles.active` 속성만 `local`등 으로 설정해두고 배포환경에서 이 값만 런타임 옵션으로 다른 값으로 지정해주는 방식을 사용할 수도 있다.
 
 
 

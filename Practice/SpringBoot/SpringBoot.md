@@ -179,12 +179,22 @@ SpringBootApplication에 다음 메소드를 추가한다..
 
 ---
 
-#### Profile 우선순위
+#### Properties Profile
+
+SpringBoot에서 `property` 설정을 관리하는 파일로 `application.properties`, `application.yml`이 있다.
+SpringBoot Application을 실행하면 반드시 `application.yml`(기본 프로필)이 로드되고 이 값을 기준으로 property가 설정되어 실행된다.
+
+그런데 이 property중 에는 `spring.profiles.active` 라는게 있다.
+`application-{profileName}.yml` 등의 형식으로 별도의 파일을 불러와서 값을 적용시키는 것이다.(중복 property는 덮어쓴다. == 나중에 로드된 값이 적용됨)
+
+그리고 `java` 실행 시 런타임 옵션으로 `-Dspring.profiles.active` 를 제공할 수 있다. `application.yml`의 `spring.profiles.active` 값을 제공하는 것이다.
+
+그래서 예시를 들어보자면,
 스프링의 기본 포트는 8080이다.
 
 다음과 같은 설정을 가정하자. 
 
-기본프로필(application.yml)
+기본 프로필(application.yml)
 ```yml
 server.port: 5000
 ```
@@ -198,14 +208,43 @@ server.port: 5000
 이 상황에서, `java -jar -Dspring.profiles.active=production ...jar` 명령어를 통해 런타임 프로필 옵션을 주고 실행하게 되면,
 실행되는 포트는 5000이 된다.
 
-즉, **명시한 프로필의 값만 사용하는 것이 아닌, 기본 프로필에 적힌 값도 적용이 된다.(우선순위를 높였을 뿐)**
+즉, 
+```
+1. application.yml 로드
+2. server.port: 5000 설정 적용
+3. spring.profiles.active: production 설정 적용
+4. application-production.yml 로드
+5. 해당 파일의 설정 적용(현재 아무것도 없음)
+```
 
-따라서 반드시, 기본 프로필에서 설정한 값과 다르게 적용되어야 하는 내용을 명시적으로 기록하자.
-또는, `application.yml`에는 `spring.profiles.active` 속성만 `local`등 으로 설정해두고 배포환경에서 이 값만 런타임 옵션으로 다른 값으로 지정해주는 방식을 사용할 수도 있다.
+따라서 공통적으로 사용하는 property들을 `application.yml`에 명시하고 서로 다른 부분만 다른 프로필에 명시하거나,
 
 
+또는, `application.yml`에는 `spring.profiles.active` 속성만 `local`등 으로 설정해두고 배포 환경에서 이 값만 런타임 옵션으로 다른 값으로 지정해주는 방식을 사용할 수도 있다.
 
+application.yml
+```yml
+spring.profiles.active: local
+```
 
+application-local.yml
+```yml
+설정1: 11
+설정2: 22
+설정5: 55
+```
+
+application-production.yml
+```yml
+설정1: 100
+설정6: 66
+```
+
+그리고 `-Dspring.profiles.active` 런타임 옵션으로 production 프로필을 "명시적으로" 지정하여 실행하면 최종 적용 되는 설정은 다음이 된다.
+```yml
+설정1: 100
+설정6: 66
+```
 
 
 

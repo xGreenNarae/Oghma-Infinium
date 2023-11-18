@@ -14,7 +14,7 @@ Settings - 에디터 - 검사 - 코드스타일 이슈 기능을 사용하자.
 
 
 **Font**
-Monaspace Neon Var Italic, JetBrains Mono
+JetBrains Mono, Monaspace Neon Var Italic(IntelliJ에서 지원이 아직..?), Consolas ..
 
 #### Layout
 `설정 - 모양 및 동작 - 모양 - 도구 창 - 와이드스크린 도구 창 레이아웃`
@@ -31,7 +31,7 @@ VSCode와 동일하게 하단 터미널영역의 "가로길이"가 좌측 프로
 `VSCode Keymap` VSCode와 단축키 통일에 도움이 된다.
 
 **Java, Spring 관련**
-`JPA Buddy` JPA를 사용한다면 ..
+`JPA Buddy` JPA를 사용한다면 훌륭한 도구
 `Maven Helper`, `Package Search` 둘 중에 하나는 불필요한건지 모르겠는데.. 아무튼 설치된 라이브러리들의 최신 버전들을 확인할 수 있게 해줌.
 
 

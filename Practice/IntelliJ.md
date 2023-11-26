@@ -1,6 +1,13 @@
-#### Code Color Scheme 적용되지 않을때.  
-사실 IntelliJ의 문제는 아닐것이고, SpringBoot를 사용하고 있는 환경에서 source root directory 설정을 해줘야 해결되는 경우가 있음.  
+#### IntelliJ가 코드를 읽지 못하는 것 같을 때
+코드의 키워드 별로 Color가 뜨지 않고 전부 흰색이라거나,
+자동완성 등이 작동하지 않는 경우.
+
+Java, SpringBoot를 사용하고 있는 환경이라면 
+source root directory 설정을 해서 해결되는 경우가 있다.
 이 경우, `src/main/java` 가 되겠다.  
+
+Dart, Flutter 환경에서도 동일한 문제가 발생했다.
+캐시 무효화 이후 재시작으로 해결되었음.
 
 ---  
 

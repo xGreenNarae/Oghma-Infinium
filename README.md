@@ -13,7 +13,7 @@
 
 ### 목적  
 
-1. 예전에는 알았던 것을 잊어버리게 되었을때, 쉽게 다시 찾아보기 위함. 이것이 가장 중요하다.  
+1. 예전에는 알았던 것을 잊어버리게 되었을 때, 쉽게 다시 찾아보기 위함. 이것이 가장 중요하다.  
 
 
 2. > Programming is not a zero-sum game. Teaching something to a fellow programmer doesn't take it away from you. I'm happy to share what I can, because I'm in it for the love of programming.  

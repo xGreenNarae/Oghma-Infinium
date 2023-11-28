@@ -14,6 +14,8 @@ Nothing은 return문 자체가 없음을 의미한다.
 - "무한"루프
 - throw Exception (주로 이것을 위해 사용하라는 의미 같음)
 
+Void는 자바 호환을 위해 존재하는 것이고, 일반적으로 사용할 일이 없다고 함.
+
 ---
 
 **기본적으로 named parameter 제공(Builder 대체)**

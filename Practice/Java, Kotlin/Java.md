@@ -181,9 +181,20 @@ orElseGet은 null일 경우에만 실행된다.
 
 ---
 
+#### Sealed Class/Interface
+JDK17 에 도입된 개념
 
+"봉인된" 이라는 뜻으로,
+해당 클래스/인터페이스를 extends, implements 할 수 있는 클래스를 제한한다.
 
+```java
+public sealed class Shape
+    permits Circle, Square, Rectangle {
+}
+```
+같은 패키지, 모듈 내에서 Circle등의 클래스를 사용할 수 있다.
 
+---
 
 
 	

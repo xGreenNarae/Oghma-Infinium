@@ -10,8 +10,6 @@ JUnit test 를 실행하려면 build.gradle 에 useJUnitPlatform을 빠뜨리지
 settings.gradle에 rootProject.name을 추가해주는 것도 의미가 있는 것으로 보임.  
 일반적으로 /src/main/java/com/example/... 의 경로를 강제하는 것인지 잘 모르겠다.  
 
-**IDE의 도움없이 Gradle 프로젝트를 다루지 말 것. IDE와 Gradle의 마법을 이용하고 행복한 삶을 살도록 하라.**  
-
 ---  
 ---  
 ---  

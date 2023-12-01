@@ -6,7 +6,7 @@ spring:
     resources:
       add-mappings: false
   mvc:
-    throw-exception-if-no-handler-found: true
+    throw-exception-if-no-handler-found: true // SpringBoot 3.2 부터 Deprecated 된 속성.
     dispatch-options-request: false
 ```
 `NoHandlerFoundException` : 404처리를 위해 사용할수있다.  

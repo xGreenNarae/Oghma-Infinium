@@ -247,6 +247,14 @@ application-production.yml
 ```
 
 
+---
+
+#### SpringBoot 의 버전에 대응하는 Spring 버전을 확인하는 법
+
+https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
+
+maven repository의 SpringBoot Starter 종속성에서 버전에 대응하는 compile dependency의 Spring 버전을 확인한다.
+예: SpringBoot Starter 3.2.0 은 Spring 6.1.1 에 해당한다.
 
 
 

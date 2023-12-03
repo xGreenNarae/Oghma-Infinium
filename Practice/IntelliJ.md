@@ -91,7 +91,7 @@ VSCode와 동일하게 하단 터미널영역의 "가로길이"가 좌측 프로
 
 #### 단축키
 
-
+**windows**
 `Ctrl + Q, W` : 코드 서식 다시 지정 (기본 `Ctrl + K, F`)
 
 `Ctrl + Q, E` : 컨텍스트 액션 표시 (기본 `Ctrl + .`)
@@ -102,3 +102,14 @@ VSCode와 동일하게 하단 터미널영역의 "가로길이"가 좌측 프로
 ```
 Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑해두면 편리하다)
 ```
+
+**mac**
+`Option + Q, W` 코드서식 다시지정
+`Option + Q, E 컨텍스트액션표시
+`Option + Q, S` 코드모두접기
+`Option + Q, E` 코드모두펼치기
+
+`command + backtick`  터미널
+`command + 1` project explorer
+`ctrl + option + arrow` 터미널, 프로젝트 윈도우 크기조정  
+

@@ -72,3 +72,15 @@ tar -xvf test.tar
 `last -f /var/log/wtmp`
 
 ---
+
+#### grep
+문자열 검색
+
+grep <옵션> <패턴> <파일명>
+
+`grep 'error' *`
+현재 디렉토리 내에서 error 문자열 찾기
+
+`grep 'error' *.log`
+현재 디렉토리내의 .log 확장자를 가진 파일에서 error 문자열 찾기
+

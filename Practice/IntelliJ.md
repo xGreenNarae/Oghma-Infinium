@@ -113,3 +113,4 @@ Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑
 `command + 1` project explorer
 `ctrl + option + arrow` 터미널, 프로젝트 윈도우 크기조정  
 
+추가로 줄을 위/아래로 이동 키를 `option + up/down` 에서 `command + up/down` 으로 바꾼다.

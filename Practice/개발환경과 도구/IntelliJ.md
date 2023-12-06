@@ -21,7 +21,7 @@ Settings - 에디터 - 검사 - 코드스타일 이슈 기능을 사용하자.
 
 
 **Font**
-JetBrains Mono, Monaspace Neon Var Italic(IntelliJ에서 지원이 아직..?), Consolas ..
+Monaspace Neon 을 사용한다.
 
 #### Layout
 `설정 - 모양 및 동작 - 모양 - 도구 창 - 와이드스크린 도구 창 레이아웃`
@@ -36,6 +36,7 @@ VSCode와 동일하게 하단 터미널영역의 "가로길이"가 좌측 프로
 `Key Promoter X` 크게 유용한가는 모르겠지만, 수동 액션을 취했을 때 사용가능한 단축키를 알림을 띄워준다.
 `SonarLint` 정적 분석, 권장 사항 보고
 `VSCode Keymap` VSCode와 단축키 통일에 도움이 된다.
+`Fast Scroll` 마우스 휠 스크롤을 빠르게해줌(Ctrl+휠)
 
 **Java, Spring 관련**
 `JPA Buddy` JPA를 사용한다면 훌륭한 도구
@@ -46,7 +47,7 @@ VSCode와 동일하게 하단 터미널영역의 "가로길이"가 좌측 프로
 - `일반`
 	- `자동 가져오기 - import문 추가 및 최적화`
 	- `모양 - 메서드 구분 기호 표시`
-	- `코드접기` default로 메서드 본문 포함
+	- `코드접기` default: 파일헤더, import문
 - `색 구성표` Atom One Dart (Material)
 - `코드 스타일 - Java - 정렬` 
 	- 최하단에 `메서드 public protected private` 순서로 추가한다. `코드 서식 다시 지정` 실행 시 메서드를 접근제한자 순으로 정렬해준다.
@@ -111,6 +112,9 @@ Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑
 
 `command + backtick`  터미널
 `command + 1` project explorer
+
+
 `ctrl + option + arrow` 터미널, 프로젝트 윈도우 크기조정  
 
 추가로 줄을 위/아래로 이동 키를 `option + up/down` 에서 `command + up/down` 으로 바꾼다.
+

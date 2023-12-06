@@ -189,3 +189,19 @@ done
 python에 `pre-commit 이라는 도구로 미리 만들어진 스크립트들을 공유하는데, 설치하고 yaml설정파일로 가져다 쓰면 된다.
 [링크](https://github.com/pre-commit/pre-commit-hooks)
 
+
+---
+
+#### git diff
+
+`working directory`
+git add 되지 않은 (staging area가 아닌), 현재 눈에 보이는 작업환경
+
+`git diff`
+working directory와 staging area의 차이를 보여준다
+
+`git diff HEAD
+working directory + staging area와 repository head의 차이를 보여준다
+
+`git diff --staged`
+staging area와 repository head의 차이를 보여준다

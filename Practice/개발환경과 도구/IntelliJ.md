@@ -118,3 +118,14 @@ Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑
 
 추가로 줄을 위/아래로 이동 키를 `option + up/down` 에서 `command + up/down` 으로 바꾼다.
 
+
+---
+
+#### UI (프로젝트 탐색기 등) 줄 간격, 들여쓰기 간격 수정
+
+도움말 - 사용자 프로퍼티 수정 항목에서
+`idea.properties` 파일을 수정한다.
+`idea.is.internal=true` 를 추가하고 IDE를 재시작하면
+`command + shift + a` - `LaF 디폴트 값 수정` 에서
+`Tree.left/right ChildIndent`, `Tree.rowHeight` 등을 수정할 수 있다.
+줄 간격의 경우, MaterialUI 등의 플러그인에서 수정할수도 있음.

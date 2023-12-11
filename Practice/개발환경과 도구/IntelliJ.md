@@ -118,6 +118,8 @@ Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑
 
 추가로 줄을 위/아래로 이동 키를 `option + up/down` 에서 `command + up/down` 으로 바꾼다.
 
+**Keymap 구성파일 위치**
+`~/Library/Application Support/JetBrains/IntelliJIdea20xx.x/keymaps`
 
 ---
 

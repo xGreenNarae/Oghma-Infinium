@@ -24,6 +24,10 @@ easymotion 없는 수동 이동 시
 **`Ctrl + ^, $`**
 기존 Home/End 키를 대체할 수 있다
 
+`set relativenumber`  를 활성화하고,
+9k, 3j 등으로 행간 이동을 쉽게 할수 있음.
+
+
 #### 2. 입력
 
 **입력 시작**
@@ -64,6 +68,11 @@ nnoremap <Tab>d :action ExpandAllRegions<CR>
 
 `ysiw"` 
 " 로 word inside를 감싼다.
+
+`yss"`
+한줄 전체 감싸기
+`S"`
+v모드에서 선택영역만 감싼다.
 
 `cs({` 
 ( 로 감싸진 영역을 { 로 변경한다

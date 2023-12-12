@@ -131,3 +131,11 @@ Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑
 `command + shift + a` - `LaF 디폴트 값 수정` 에서
 `Tree.left/right ChildIndent`, `Tree.rowHeight` 등을 수정할 수 있다.
 줄 간격의 경우, MaterialUI 등의 플러그인에서 수정할수도 있음.
+
+
+---
+
+#### LigthEdit 모드
+
+단일 파일을 가볍게 수정하고 싶은 경우 등..
+`idea -ew <filepath>` 로 light edit mode로 열 수 있다.

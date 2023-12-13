@@ -135,7 +135,7 @@ Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑
 
 ---
 
-#### LigthEdit 모드
+#### LightEdit 모드
 
 단일 파일을 가볍게 수정하고 싶은 경우 등..
 `idea -ew <filepath>` 로 light edit mode로 열 수 있다.

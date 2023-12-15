@@ -55,13 +55,22 @@ pr 내용을 로컬로 가져와서 확인한다.(로컬 브랜치 생성)
 `gh pr review` 가 있는데, 특정 라인에 코멘트를 붙이는 것은 아니다. approve, request changes 등을 찍는다는 뜻.
 
 
-
----
-
-
 `gh status`
 나에게 할당된 이슈, requested reviews 등.. 확인
 
 
 이외에 GitHub Actions Job을 trigger 할 수 있고,
 GitHub API 를 사용할수 있고 등등..
+
+
+---
+
+#### Copilot Cli
+
+github cli 에서는 copilot 을 사용할 수 있다.
+https://docs.github.com/en/copilot/github-copilot-in-the-cli/using-github-copilot-in-the-cli
+
+현재는
+`gh copilot suggest`
+`gh copilot explain`
+2가지 명령어를 제공한다.

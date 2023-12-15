@@ -92,3 +92,14 @@ https://api.github.com/repos/xGreenNarae/Oghma-Infinium/languages
 
 
 
+---
+
+#### Rate Limit
+https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28
+
+인증되지 않은 사용자는 시간당 60.
+토큰을 같이 쓰면, 시간당 5000
+엔터프라이즈 계정은 시간당 15000 이다.
+
+`GET https://api.github.com/rate_limit` 
+엔드포인트에서 잔여량을 확인 할 수 있다.

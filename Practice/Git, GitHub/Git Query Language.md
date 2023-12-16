@@ -13,7 +13,7 @@ SQL 형식으로 .git 파일을 검색하는 오픈소스 도구
 
 예제
 
-최초 커밋을 가져온다.
+최초 커밋을 가져온다. (gitql)
 ```
 SELECT *
 FROM commits
@@ -21,3 +21,7 @@ ORDER BY ASC
 LIMIT 1
 ```
 
+최초 커밋을 확인하는 방법 (git)
+```
+git log --reverse --pretty=format:"%H %ad" --date=short | head -n 1
+```

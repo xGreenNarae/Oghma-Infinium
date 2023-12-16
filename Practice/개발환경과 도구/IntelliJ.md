@@ -113,6 +113,7 @@ Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑
 `command + backtick`  터미널
 `command + 1` project explorer
 
+`Ctrl + (Shift) + Tab` 메인메뉴-창-에디터탭- 다음/이전탭 선택
 
 `ctrl + option + arrow` 터미널, 프로젝트 윈도우 크기조정  
 

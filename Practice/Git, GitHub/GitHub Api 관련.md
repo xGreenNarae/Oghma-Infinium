@@ -90,12 +90,17 @@ https://api.github.com/repos/xGreenNarae/Oghma-Infinium/languages
 }
 ```
 
+언어 사용량 비중을 repo별, commit별로 제공하는 훌륭한 서비스가 있어서,
+이것을 이용하도록 한다.
+https://github.com/vn7n24fzkq/github-profile-summary-cards
 
+![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=xGreenNarae&theme=default) 
+![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=xGreenNarae&theme=default)
 
 ---
 
 #### Rate Limit
-https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28
+https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-ap. ?apiVersion=2022-11-28
 
 인증되지 않은 사용자는 시간당 60.
 토큰을 같이 쓰면, 시간당 5000
@@ -103,3 +108,4 @@ https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?
 
 `GET https://api.github.com/rate_limit` 
 엔드포인트에서 잔여량을 확인 할 수 있다.
+

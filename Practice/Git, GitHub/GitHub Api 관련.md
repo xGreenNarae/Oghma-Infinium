@@ -97,6 +97,39 @@ https://github.com/vn7n24fzkq/github-profile-summary-cards
 ![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=xGreenNarae&theme=default) 
 ![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=xGreenNarae&theme=default)
 
+**GraphQL API 사용법 예시**
+
+```
+query($login: String!, $cursor: String) {
+  user(login: $login) {
+    repositories(first: 100, after: $cursor) {
+      edges {
+        node {
+          name
+          url
+          languages(first: 10) {
+            edges {
+              node {
+                name
+                color
+              }
+            }
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}
+
+```
+edges는 관계를 나타내고, node는 실제 데이터 항목을 의미함.
+급하게 사용할 필요가 있다면, chatgpt가 잘 만들어 준다.
+
+
 ---
 
 #### Rate Limit

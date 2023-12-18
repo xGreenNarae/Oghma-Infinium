@@ -1,5 +1,10 @@
 `bash`는 [문서 참고](obsidian://open?vault=Oghma-Infinium&file=Practice%2F%EB%B0%B0%ED%8F%AC%EC%99%80%20%EC%9A%B4%EC%98%81%2FUbuntu%20%EA%B8%B0%EB%B3%B8%20%EB%AA%85%EB%A0%B9%EC%96%B4(bash))
 
+**zshrc**
+`.` (또는 source) : 지정된 스크립트 또는 구성파일을 현재 세션에 로드한다.
+
+
+
 
 `oh-my-zsh`
 zsh 쉘의 확장

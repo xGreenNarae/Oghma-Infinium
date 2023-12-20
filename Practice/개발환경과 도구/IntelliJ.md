@@ -1,4 +1,4 @@
-#### IntelliJ가 코드를 읽지 못하는 것 같을 때
++#### IntelliJ가 코드를 읽지 못하는 것 같을 때
 코드의 키워드 별로 Color가 뜨지 않고 전부 흰색이라거나,
 자동완성 등이 작동하지 않는 경우.
 
@@ -117,7 +117,11 @@ Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑
 
 `ctrl + option + arrow` 터미널, 프로젝트 윈도우 크기조정  
 
+`option + (shift) + tab` 다음/이전 프로젝트 창
+
 추가로 줄을 위/아래로 이동 키를 `option + up/down` 에서 `command + up/down` 으로 바꾼다.
+
+
 
 **Keymap 구성파일 위치**
 `~/Library/Application Support/JetBrains/IntelliJIdea20xx.x/keymaps`
@@ -133,6 +137,8 @@ Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑
 `Tree.left/right ChildIndent`, `Tree.rowHeight` 등을 수정할 수 있다.
 줄 간격의 경우, MaterialUI 등의 플러그인에서 수정할수도 있음.
 
+Material UI 사용하는 경우, rowHeight는
+`모양 및 동작 - Material Theme UI - 설정 - 프로젝트 보기 - 사용자 정의 항목 선 높이` 에서 수정가능
 
 ---
 

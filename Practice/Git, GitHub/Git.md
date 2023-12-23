@@ -211,3 +211,9 @@ staging area와 repository head의 차이를 보여준다
 
 #### git reset
 모든 stage 상태의 파일들을 stage상태에서 제거한다.
+
+---
+
+#### rename branch
+`git branch -m <old-name> <new-name>`
+m : move

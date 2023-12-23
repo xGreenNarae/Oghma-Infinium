@@ -83,3 +83,18 @@ final Rx<Character> character = Character(
 ```
 
 
+
+---
+
+#### 오류
+
+```
+[!] CocoaPods could not find compatible versions for pod "macos_window_utils":
+  In Podfile:
+    macos_window_utils (from `Flutter/ephemeral/.symlinks/plugins/macos_window_utils/macos`)
+
+Specs satisfying the `macos_window_utils (from `Flutter/ephemeral/.symlinks/plugins/macos_window_utils/macos`)` dependency were found, but they required a higher minimum deployment target.
+```
+
+`macos/Podfile` 의 osx 버전을 10.14 -> 11.0 으로 변경.
+xcode에서도 변경..

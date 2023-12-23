@@ -44,6 +44,10 @@ maven repository 등 공식 저장소에서 제공하는 외부 의존성 모듈
 `git switch -c <new_branch_name>`
 c 는 create라는 뜻.
 
+#### 현재 브랜치의 특정 커밋으로부터 새로운 브랜치 생성
+`git switch -c <new_branch_name> <commit_hash>`
+
+
 ---
 
 

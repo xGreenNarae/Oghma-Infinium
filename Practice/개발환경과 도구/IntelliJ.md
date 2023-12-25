@@ -121,6 +121,7 @@ Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑
 
 추가로 줄을 위/아래로 이동 키를 `option + up/down` 에서 `command + up/down` 으로 바꾼다.
 
+프로젝트 파일트리에서 `ctrl + option + N` : 이 디렉터리에서 새로만들기
 
 
 **Keymap 구성파일 위치**
@@ -154,3 +155,10 @@ Material UI 사용하는 경우, rowHeight는
 불필요하게 인덱싱할 필요가 없기 때문에..
 `우클릭 - 디렉터리를 다음으로 표시 - 제외됨`  클릭하면 검사에서 제외된다.
 syntax-highlight 등도 당연히 모두 꺼진다.
+
+---
+
+#### Copilot enable/disable
+
+`option+shift+command + O` 키에 할당되어있다.
+들여쓰기, 자동완성 등과 겹칠 때 사용할 것.

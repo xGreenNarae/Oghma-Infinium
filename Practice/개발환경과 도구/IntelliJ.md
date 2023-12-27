@@ -1,4 +1,4 @@
-+#### IntelliJ가 코드를 읽지 못하는 것 같을 때
+#### IntelliJ가 코드를 읽지 못하는 것 같을 때
 코드의 키워드 별로 Color가 뜨지 않고 전부 흰색이라거나,
 자동완성 등이 작동하지 않는 경우.
 
@@ -92,24 +92,7 @@ VSCode와 동일하게 하단 터미널영역의 "가로길이"가 좌측 프로
 
 #### 단축키
 
-**windows**
-`Ctrl + Q, W` : 코드 서식 다시 지정 (기본 `Ctrl + K, F`)
-
-`Ctrl + Q, E` : 컨텍스트 액션 표시 (기본 `Ctrl + .`)
-
-`Ctrl + Shift + Q` : 코드 모두 접기
-`Ctrl + Shift + W` : 코드 모두 펼치기
-
-```
-Ctrl + ` : 터미널 토글. (하단 뷰 숨기기도 같은 단축키에 매핑해두면 편리하다)
-```
-
 **mac**
-`Option + Q, W` 코드서식 다시지정
-`Option + Q, E 컨텍스트액션표시
-`Option + Q, S` 코드모두접기
-`Option + Q, E` 코드모두펼치기
-
 `command + backtick`  터미널
 `command + 1` project explorer
 
@@ -162,3 +145,13 @@ syntax-highlight 등도 당연히 모두 꺼진다.
 
 `option+shift+command + O` 키에 할당되어있다.
 들여쓰기, 자동완성 등과 겹칠 때 사용할 것.
+
+
+---
+
+#### External Tool 사용법
+wezterm을 단축키로 실행하는 예제
+
+![[IntelliJ External Tool Example.png]]
+
+키 맵에서 외부도구(이름이 외부도구로만 표시되는 듯?)를 바인딩해주면 된다.

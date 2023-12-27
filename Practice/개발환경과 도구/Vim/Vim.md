@@ -40,33 +40,9 @@ o
 **삭제**
 동일하게 **d (delete)** 에도 적용가능.
 
-`d$`
-현재 커서부터 줄 끝까지 삭제
-
-^와 $는 `<Space>h, <Space>l` 에 remap 해서 사용한다.
-
-#### Vim-surround
-`', ", (, {, [` 등으로 감싼다.
-`ideaVim`에서는 `set surround` 구문을 추가하여 활성화 한다.
-
-`ysiw"` 
-" 로 word inside를 감싼다.
-
-`yss"`
-한줄 전체 감싸기
-
-`S"`
-v모드에서 선택영역만 감싼다.
-
-`cs({` 
-( 로 감싸진 영역을 { 로 변경한다
-
-`ds"` 
-감싸진 태그 제거
-
-여는 태그`{` 대신 닫는 태그`}` 를 사용하면 태그 내부 공백 없이 작동한다. 
-
----
+라인 시작과 끝으로 가는것은 `^, $` 키 인데, 이 중에 시작으로 가는 키는 `0` 도 지원한다.
+커서부터 라인 시작, 끝으로 삭제/수정 등은
+`c0, d0`, `C, D` 
 
 `set relativenumber`
 j, k 등으로 원하는 라인 맨 앞으로 커서를 이동하기 위한 상대숫자 라인넘버 설정
@@ -77,18 +53,11 @@ j, k 등으로 원하는 라인 맨 앞으로 커서를 이동하기 위한 상�
 
 #### key map
 ```
-
-inoremap kj <Esc>l
-
 ## navigation 기능 보완 
 nnoremap H ^
-nnoremap dH d^
-nnoremap cH c^
 vnoremap H ^
 
 nnoremap L $
-nnoremap dL d$
-nnoremap cL c$
 vnoremap L $
 
 ```
@@ -106,6 +75,7 @@ vnoremap L $
 여기서, `"inoremap kj <Esc> "` 와 같이 맨 뒤에 공백이 들어가있으면
 키 입력 후 커서가 한 줄 아래로 내려가있는 문제가 발생한다.
 
+참고로, esc키는 caps lock 에 switch하여 쓴다.
 
 ---
 
@@ -132,3 +102,62 @@ vnoremap L $
 `<<`, `>>` 등을 사용한다.
 반복이 필요한 경우 `.` 을 사용하고,
 이전 selection을 복구하는 경우 `gv` 등을 사용할 수 있다.
+
+
+---
+
+#### Buffer close
+`:bd`
+
+
+---
+
+#### Plugins
+
+**surround**
+`', ", (, {, [` 등으로 감싼다.
+`ideaVim`에서는 `set surround` 구문을 추가하여 활성화 한다.
+
+`ysiw"` 
+" 로 word inside를 감싼다.
+
+`yss"`
+한줄 전체 감싸기
+
+`S"`
+v모드에서 선택영역만 감싼다.
+
+`cs({` 
+( 로 감싸진 영역을 { 로 변경한다
+
+`ds"` 
+감싸진 태그 제거
+
+여는 태그`{` 대신 닫는 태그`}` 를 사용하면 태그 내부 공백 없이 작동한다. 
+
+**easymotion**
+lightspeed, leap.nvim ..
+커서 점프
+
+
+**argtextobj**
+function argument 를 조작한다.
+`daa` delete an argument
+`cia` change inner argument
+`via` select inner argument
+
+설정 값으로 중첩 함수의 argument를 조작할 때 동작을 조정할 수 있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

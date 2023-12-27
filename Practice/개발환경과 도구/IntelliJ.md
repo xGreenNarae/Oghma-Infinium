@@ -155,3 +155,7 @@ wezterm을 단축키로 실행하는 예제
 ![[IntelliJ External Tool Example.png]]
 
 키 맵에서 외부도구(이름이 외부도구로만 표시되는 듯?)를 바인딩해주면 된다.
+
+
+
+

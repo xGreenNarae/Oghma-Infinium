@@ -30,26 +30,7 @@ nnoremap <Tab>d :action ExpandAllRegions<CR>
 
 #### .ideavimrc 설정
 
-```
-set surround  
-set easymotion  
-set relativenumber  
+https://github.com/xGreenNarae/dotfiles/blob/main/dot_ideavimrc
   
-let mapleader=" "  
-  
-## easymotion  
-nmap <Leader>a <Plug>(easymotion-jumptoanywhere)  
-  
-## intellij actions keymap  
-nnoremap <Tab>w :action ReformatCode<CR>  
-nnoremap <Tab>e :action ShowIntentionActions<CR>  
-nnoremap <Tab>s :action CollapseAllRegions<CR>  
-nnoremap <Tab>d :action ExpandAllRegions<CR>  
-  
-  
-## 선언으로 이동  
-nnoremap <Space>gd :action GotoDeclaration<CR>  
-  
-```
 
 파일트리, 터미널 토글 기능은 vim 상태에서 action을 호출하여 "켜는 것"은 가능하지만, 다시 끄는 것은 intellij의 영역이기 때문에, space등의 키가 아닌 ctrl, command 등의 키에 할당해야 함.

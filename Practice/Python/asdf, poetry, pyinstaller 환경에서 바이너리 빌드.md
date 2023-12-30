@@ -41,3 +41,4 @@ module는 .py 파일을 의미하고, package는 .py파일들이 위치한 디�
 `poetry run pyinstaller --onefile --paths=/Users/greennarae/Library/Caches/pypoetry/virtualenvs/myproject-TEYUM9qJ-py3.12 ./myproject/main.py
 `
 
+참고로 pyinstaller가 생성하는 바이너리 파일의 이름을 지정하는옵션은 `--name` 이라고 한다.

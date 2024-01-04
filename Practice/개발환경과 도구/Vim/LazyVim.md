@@ -11,3 +11,9 @@
 
 **buffer**
 `[, ] + b` 좌우 이동
+`:bd` 또는 `<Space>bd` 로 닫는다
+
+
+**window**
+`<C-hjkl>` 로 이동 가능
+`:q` 또는 `<Space>wd` 로 닫는다.

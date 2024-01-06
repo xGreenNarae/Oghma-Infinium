@@ -51,17 +51,12 @@ j, k 등으로 원하는 라인 맨 앞으로 커서를 이동하기 위한 상�
 
 
 
-#### key map
+#### vimrc key map 예시
 ```
-## navigation 기능 보완 
 nnoremap H ^
 vnoremap H ^
-
-nnoremap L $
-vnoremap L $
-
 ```
-
+n(normal), v(visual) 모드에서 각각 no recursive 로 H키를 ^키에 매핑한다. (trailing space가 없도록 주의)
 
 
 
@@ -95,23 +90,34 @@ vnoremap L $
 
 `:e <file-path>`
 
+---
+
+#### `<C-o>, <C-i>`
+back , forth 커서 이동(easymotion, search, go to definition 등으로 jump했을 시)
 
 ---
 
-#### v모드에서 들여쓰기
+#### Replace mode
+
+`R`
+`gR` : virtual replace mode (tab 문자도 입력 가능)
+
+---
+
+#### Visual mode
+
+`v`: 글자 단위 선택
+`V`: 줄 선택
+`<C-v>` block 선택 모드
+
+`gv` 이전 선택 복구
+
+**들여쓰기**
 `<<`, `>>` 등을 사용한다.
 반복이 필요한 경우 `.` 을 사용하고,
-이전 selection을 복구하는 경우 `gv` 등을 사용할 수 있다.
 
 
 ---
-
-#### Buffer close
-`:bd`
-
-
----
-
 #### Macro
 
 `qq` 로 매크로 기록 시작
@@ -156,6 +162,8 @@ function argument 를 조작한다.
 `via` select inner argument
 
 설정 값으로 중첩 함수의 argument를 조작할 때 동작을 조정할 수 있다.
+
+
 
 
 
